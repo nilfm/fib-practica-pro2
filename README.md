@@ -25,8 +25,8 @@
 
 ### TO DEBUG:
 
--De moment tot
+-De moment tot (però compila!!)
 
 ### COMENTARIS:
 
--Arreglar l'estil de manera que l'idioma sigui uniforme
+-Arreglar l'estil de manera que l'idioma sigui uniforme (per exemple noms de variables com files, columnes, o funcions com cerca).
