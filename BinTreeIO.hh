@@ -1,3 +1,3 @@
-#include "BinTree.hh"
+#include "Class_BinTree.hh"
 
-void llegir_preordre(BinTree& a);
+void llegir_preordre(BinTree<int>& a);

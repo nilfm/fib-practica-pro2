@@ -3,7 +3,6 @@
 
 #include <cassert>
 #include <memory>
-#include <iostream>
 using namespace std;
 
 // A BinTree<T> implements binary trees with values of type T.

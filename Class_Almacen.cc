@@ -1,8 +1,9 @@
-#include "ClassAlmacen.hh"
+#include "Class_Almacen.hh"
+#include "BinTreeIO.hh"
 
 Almacen::Almacen() {
     tree = BinTree<int>();
-    almacen = vector<Estanteria>;
+    almacen = vector<Estanteria>();
 }
 
 Almacen::~Almacen() {}
@@ -20,6 +21,7 @@ int Almacen::quitar_items(int sala, const string& id, int quantitat, Inventario&
 }
 
 int Almacen::distribuir(const string& id, int quantitat, Inventario& inv) {
+    return 0;
     //TO DO
 }
 
@@ -32,7 +34,7 @@ void Almacen::reorganizar(int sala) {
 }
 
 void Almacen::redimensionar(int sala, int filas, int columnas) {
-    almacen[sala].redimensionar();
+    almacen[sala].redimensionar(filas, columnas);
 }
 
 void Almacen::leer(int n) {

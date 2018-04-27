@@ -1,27 +1,25 @@
 #include "Class_Estanteria.hh"
 
-private:
-int Estanteria::cerca_lineal(const string& s) {
+int Estanteria::cerca_lineal(const string& s) const {
     int size = files*columnes;
     for (int i = 0; i < size; i++) {
         if (estanteria[i] == s) return i;
     }
     return -1;
 }
-int Estanteria::cerca_dicot(const string& s) {
+int Estanteria::cerca_dicot(const string& s) const {
     int size = files*columnes;
     int left = 0;
     int right = size;
     while (left < right) {
         int mid = (left+right)/2;
-        if (estanteria[mid] == s) return i;
+        if (estanteria[mid] == s) return mid;
         else if (estanteria[mid] < s) right = mid-1;
         else left = mid+1;
     }
     return -1;
 }
     
-public:
 Estanteria::Estanteria(int files, int columnes) {
     this->files = files;
     this-> columnes = columnes;
@@ -41,7 +39,7 @@ int Estanteria::cerca(const string& id) const {
     else return cerca_lineal(id);
 }
 
-void Estanteria::compactar(){
+void Estanteria::compactar() {
     //TO DO
 }
 
@@ -56,8 +54,17 @@ void Estanteria::redimensionar(int filas, int columnas) {
     this->columnes = columnas;
 }
 
-int Estanteria::poner_items(const string& id, int quantitat, Inventario& inv){
+int Estanteria::poner_items(const string& id, int quantitat, Inventario& inv) {
+    return 0;
     //TO DO
 }
 
+int Estanteria::quitar_items(const string& id, int quantitat, Inventario& inv) {
+    return 0;
+    //TO DO
+}
+
+void Estanteria::escribir() const{
+    //TO DO
+}
 
