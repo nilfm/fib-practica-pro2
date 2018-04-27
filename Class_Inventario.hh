@@ -1,5 +1,5 @@
 /** @file Class_Inventario.hh
-    @brief Especificación de la clase Inventario
+    @brief Especificación de la clase Inventario.
 */
 
 #ifndef _CLASS_INVENTARIO_
@@ -18,9 +18,9 @@ using namespace std;
 #endif
 
 /** @class Inventario
-    @brief Representa un inventario 
+    @brief Representa un inventario.
     
-    Contiene la cantidad que hay en el almacén de cada uno de sus productos dados de alta
+    Contiene la cantidad que hay en el almacén de cada uno de sus productos dados de alta.
 */
 
 class Inventario{
@@ -29,54 +29,54 @@ private:
     
 public:
     //Constructores
-    /** @brief Constructora por defecto
+    /** @brief Constructora por defecto.
      * 
       \pre <em>cierto</em>
-      \post Devuelve un inventario vacío
+      \post Devuelve un inventario vacío.
       \coste N/A
     */  
     Inventario();
     
     //Destructores
-    /** @brief Destructora por defecto
+    /** @brief Destructora por defecto.
      * 
       \pre <em>cierto</em>
-      \post El inventario queda destruído
+      \post El inventario queda destruido.
       \coste N/A
     */  
     ~Inventario();
     
     //Consultores
-    /** @brief Consulta la cantidad de unidades que hay en el inventario de un cierto producto
+    /** @brief Consulta la cantidad de unidades que hay en el inventario de un cierto producto.
      * 
-      \pre El producto está dado de alta en el inventario
-      \post 
+      \pre El producto está dado de alta en el inventario.
+      \post Devuelve la cantidad de unidades que hay en el inventario del producto con identificador id.
       \coste N/A
     */  
     int consultar_prod(const string& id) const;
     
     //Modificadores
-    /** @brief Da de alta un producto en el inventario
+    /** @brief Da de alta un producto en el inventario.
      * 
-      \pre El producto no estaba dado de alta
-      \post El producto queda dado de alta
+      \pre El producto no estaba dado de alta.
+      \post El producto queda dado de alta.
       \coste N/A
     */  
     void poner_prod(const string& id);
     
-    /** @brief Da de baja un producto en el inventario
+    /** @brief Da de baja un producto en el inventario.
      * 
-      \pre El producto estaba dado de alta y había cero unidades de él en el inventario
-      \post El producto queda dado de baja
+      \pre El producto estaba dado de alta y había cero unidades de él en el inventario.
+      \post El producto queda dado de baja.
       \coste N/A
     */  
     void quitar_prod(const string& id);
     
     //Escriure
-    /** @brief Escribe los contenidos del inventario, producto-cantidad, en orden de identificador de producto
+    /** @brief Escribe los contenidos del inventario, producto-cantidad, en orden de identificador de producto.
      * 
-      \pre <em>cierto</em>
-      \post Se ha escrito en el canal de salida la cantidad de cada producto del inventario, ordenados por su identificador 
+      \pre <em>cierto</em>.
+      \post Se ha escrito en el canal de salida la cantidad de cada producto del inventario, ordenados por su identificador.
       \coste N/A
     */  
     void escribir() const;
