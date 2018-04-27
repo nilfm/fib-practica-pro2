@@ -13,7 +13,6 @@
 #include <map>
 #include <utility>
 #include <algorithm>
-#include "Class_BinTree.hh"
 using namespace std;
 
 #endif
