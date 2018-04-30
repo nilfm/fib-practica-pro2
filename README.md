@@ -2,13 +2,15 @@
 
 ### HEADERS:
 
--`BinTree.hh`  
+-`BinTree.hh`   (has code)
+-`BinTreeIO.hh`
 -`Class_Estanteria.hh`  
 -`Class_Almacen.hh`  
 -`Class_Inventario.hh`  
 
 ### CODE:
 
+-`BinTreeIO.cc`
 -`Class_Almacen.cc`  
 -`Class_Estanteria.cc`  
 -`Class_Inventario.cc`  
@@ -29,4 +31,4 @@
 
 ### COMENTARIS:
 
--Arreglar l'estil de manera que l'idioma sigui uniforme (per exemple noms de variables com filas, columnas, o funcions com cerca).
+-Cal revisar que els comentaris siguin uniformes en idioma i estil
