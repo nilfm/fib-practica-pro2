@@ -29,10 +29,10 @@ class Estanteria{
 //Invariante de la representación: Si un elemento está en la posición k del vector estanteria, entonces está en la fila (k/columnas) y en la columna (k%columnas).
 private:
     vector<string> estanteria;
-    int files;
-    int columnes;
+    int filas;
+    int columnas;
     bool ordenat;
-    int buides;
+    int vacias;
     
     int cerca_dicot(const string& s) const;
     int cerca_lineal(const string& s) const;
@@ -41,11 +41,11 @@ public:
     //Constructores
     /** @brief Constructora por tamaño.
      * 
-      \pre files y columnes son enteros positivos.
+      \pre filas y columnas son enteros positivos.
       \post Devuelve una estantería inicializada con las dimensiones dadas, donde cada elemento es NULL.
       \coste N/A
     */  
-    Estanteria(int files, int columnes);
+    Estanteria(int filas, int columnas);
     
     //Destructores
     /** @brief Destructora por defecto.
@@ -72,6 +72,30 @@ public:
       \coste Logarítmico si la estantería está ordenada, lineal si no lo está.
     */ 
     int cerca(const string& id) const;
+    
+    /** @brief Consulta el número de filas que tiene la estantería.
+     * 
+      \pre <em>cierto</em>
+      \post Devuelve la cantidad de filas que tiene la estantería.
+      \coste N/A
+    */  
+    int consultar_filas() const;
+    
+    /** @brief Consulta el número de columnas que tiene la estantería.
+     * 
+      \pre <em>cierto</em>
+      \post Devuelve la cantidad de columnas que tiene la estantería.
+      \coste N/A
+    */  
+    int consultar_columnas() const;
+    
+    /** @brief Consulta el número de posiciones vacías que tiene la estantería.
+     * 
+      \pre <em>cierto</em>
+      \post Devuelve la cantidad de posiciones vacías que tiene la estantería.
+      \coste N/A
+    */  
+    int consultar_vacias() const;
     
     //Modificadores
     /** @brief Compacta la estantería.

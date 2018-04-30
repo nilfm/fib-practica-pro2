@@ -48,6 +48,30 @@ public:
     */  
     string consultar_pos(int sala, int fila, int columna) const;
     
+    /** @brief Consulta el número de filas que tiene la estantería de una sala dada.
+     * 
+      \pre sala contiene una sala que existe en el almacén.
+      \post Devuelve la cantidad de filas que tiene la estantería de esa sala.
+      \coste N/A
+    */  
+    int consultar_filas(int sala) const;
+    
+    /** @brief Consulta el número de columnas que tiene la estantería de una sala dada.
+     * 
+      \pre sala contiene una sala que existe en el almacén.
+      \post Devuelve la cantidad de columnas que tiene la estantería de esa sala.
+      \coste N/A
+    */  
+    int consultar_columnas(int sala) const;
+    
+    /** @brief Consulta el número de posiciones vacías que tiene la estantería de una sala dada.
+     * 
+      \pre sala contiene una sala que existe en el almacén.
+      \post Devuelve la cantidad de posiciones vacías que tiene la estantería de esa sala.
+      \coste N/A
+    */  
+    int consultar_vacias(int sala) const;
+    
     //Modificadores
     /** @brief Añade a una sala una cierta cantidad de ítems
      * 

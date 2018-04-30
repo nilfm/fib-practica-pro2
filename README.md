@@ -29,4 +29,4 @@
 
 ### COMENTARIS:
 
--Arreglar l'estil de manera que l'idioma sigui uniforme (per exemple noms de variables com files, columnes, o funcions com cerca).
+-Arreglar l'estil de manera que l'idioma sigui uniforme (per exemple noms de variables com filas, columnas, o funcions com cerca).

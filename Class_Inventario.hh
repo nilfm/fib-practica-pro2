@@ -55,6 +55,14 @@ public:
     */  
     int consultar_prod(const string& id) const;
     
+    /** @brief Consulta si un cierto producto está dado de alta en el inventario.
+     * 
+      \pre <em>cierto</em>.
+      \post Devuelve cierto si el producto está dado de alta, y falso si no.
+      \coste N/A
+    */  
+    bool esta_dado_de_alta(const string& id) const;
+    
     //Modificadores
     /** @brief Da de alta un producto en el inventario.
      * 

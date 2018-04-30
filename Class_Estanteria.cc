@@ -1,14 +1,14 @@
 #include "Class_Estanteria.hh"
 
 int Estanteria::cerca_lineal(const string& s) const {
-    int size = files*columnes;
+    int size = filas*columnas;
     for (int i = 0; i < size; i++) {
         if (estanteria[i] == s) return i;
     }
     return -1;
 }
 int Estanteria::cerca_dicot(const string& s) const {
-    int size = files*columnes;
+    int size = filas*columnas;
     int left = 0;
     int right = size;
     while (left < right) {
@@ -20,23 +20,35 @@ int Estanteria::cerca_dicot(const string& s) const {
     return -1;
 }
     
-Estanteria::Estanteria(int files, int columnes) {
-    this->files = files;
-    this-> columnes = columnes;
+Estanteria::Estanteria(int filas, int columnas) {
+    this->filas = filas;
+    this->columnas = columnas;
     ordenat = true;
-    buides = files*columnes;
-    estanteria = vector<string>(files*columnes, "NULL");
+    vacias = filas*columnas;
+    estanteria = vector<string>(filas*columnas, "NULL");
 }
 
 Estanteria::~Estanteria() {}
 
 string Estanteria::consultar_pos(int fila, int columna) const {
-    return estanteria[fila*columnes + columna];
+    return estanteria[fila*columnas + columna];
 }
 
 int Estanteria::cerca(const string& id) const {
     if (ordenat) return cerca_dicot(id);
     else return cerca_lineal(id);
+}
+
+int Estanteria::consultar_filas() const {
+	return filas;
+}
+
+int Estanteria::consultar_columnas() const {
+	return columnas;
+}
+
+int Estanteria::consultar_vacias() const {
+	return vacias;
 }
 
 void Estanteria::compactar() {
@@ -45,13 +57,13 @@ void Estanteria::compactar() {
 
 void Estanteria::reorganizar() {
     compactar();
-    sort(estanteria.begin(), estanteria.begin() + files*columnes - buides); 
+    sort(estanteria.begin(), estanteria.begin() + filas*columnas - vacias); 
 }
 
 void Estanteria::redimensionar(int filas, int columnas) {
     compactar();
-    this->files = filas;
-    this->columnes = columnas;
+    this->filas = filas;
+    this->columnas = columnas;
 }
 
 int Estanteria::poner_items(const string& id, int quantitat, Inventario& inv) {
