@@ -2,15 +2,15 @@
 
 ### HEADERS:
 
--`BinTree.hh`   (has code)
--`BinTreeIO.hh`
+-`BinTree.hh`   (has code)  
+-`BinTreeIO.hh`  
 -`Class_Estanteria.hh`  
 -`Class_Almacen.hh`  
 -`Class_Inventario.hh`  
 
 ### CODE:
 
--`BinTreeIO.cc`
+-`BinTreeIO.cc`  
 -`Class_Almacen.cc`  
 -`Class_Estanteria.cc`  
 -`Class_Inventario.cc`  
