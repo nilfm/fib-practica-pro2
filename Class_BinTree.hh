@@ -1,3 +1,7 @@
+/** @file Class_BinTree.hh
+    @brief Estructura de datos en forma de árbol binario
+*/
+
 #ifndef _CLASS_BINTREE_
 #define _CLASS_BINTREE_
 
