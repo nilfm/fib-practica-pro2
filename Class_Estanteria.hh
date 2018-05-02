@@ -1,5 +1,5 @@
 /** @file Class_Estanteria.hh
-    @brief Especificación de la clase Estantería.
+    @brief Especificación de la clase Estanteria.
 */
 
 #ifndef _CLASS_ESTANTERIA_
@@ -19,7 +19,7 @@ using namespace std;
 
 #endif
 
-/** @class Estantería
+/** @class Estanteria
     @brief Representa una estantería .
     
     Tiene un cierto numero de filas y columnas, que contienen productos o NULL (si estan vacíos).

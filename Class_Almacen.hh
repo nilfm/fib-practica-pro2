@@ -1,5 +1,5 @@
 /** @file Class_Almacen.hh
-    @brief Especificación de la clase Almacén.
+    @brief Especificación de la clase Almacen.
 */
 
 #ifndef _CLASS_ALMACEN_
@@ -8,7 +8,7 @@
 #include "Class_Estanteria.hh"
 #include "Class_BinTree.hh"
 
-/** @class Almacén
+/** @class Almacen
     @brief Representa un almacén .
     
     Puede contener salas, que tienen una estantería cada una. Puede usarse para añadir o quitar ítems de salas, o para modificar los parametros de dichas salas.
