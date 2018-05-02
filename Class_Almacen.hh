@@ -6,7 +6,10 @@
 #define _CLASS_ALMACEN_
 
 #include "Class_Estanteria.hh"
+
+#ifndef NO_DIAGRAM
 #include "Class_BinTree.hh"
+#endif
 
 /** @class Almacen
     @brief Representa un almacén .

@@ -1,9 +1,13 @@
 #ifndef _CLASS_BINTREE_
 #define _CLASS_BINTREE_
 
+#ifndef NO_DIAGRAM
+
 #include <cassert>
 #include <memory>
 using namespace std;
+
+#endif
 
 // A BinTree<T> implements binary trees with values of type T.
 template <typename T> class BinTree {
