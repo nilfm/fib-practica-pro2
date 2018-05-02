@@ -13,6 +13,12 @@ using namespace std;
 
 #endif
 
+/** @class BinTree
+    @brief Representa un árbol binario.
+    
+    Contiene la cantidad que hay en el almacén de cada uno de sus productos dados de alta.
+*/
+
 // A BinTree<T> implements binary trees with values of type T.
 template <typename T> class BinTree {
 
