@@ -1,3 +1,7 @@
+/** @file BinTreeIO.hh
+    @brief Funciones auxiliares para entrada y salida de BinTree
+*/
+
 #include "Class_BinTree.hh"
 
 /** @brief Lee un árbol binario del canal de entrada en preorden
