@@ -20,7 +20,7 @@ using namespace std;
 #endif
 
 /** @class Estanteria
-    @brief Representa una estantería .
+    @brief Representa una estantería.
     
     Tiene un cierto numero de filas y columnas, que contienen productos o NULL (si estan vacíos).
 */

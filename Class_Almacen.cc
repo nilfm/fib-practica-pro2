@@ -9,27 +9,27 @@ Almacen::Almacen() {
 Almacen::~Almacen() {}
 
 string Almacen::consultar_pos(int sala, int fila, int columna) const {
-    return almacen[sala].consultar_pos(fila, columna);
+    return almacen[sala-1].consultar_pos(fila, columna);
 }
 
 int Almacen::consultar_filas(int sala) const {
-	return almacen[sala].consultar_filas();
+	return almacen[sala-1].consultar_filas();
 }
 
 int Almacen::consultar_columnas(int sala) const {
-	return almacen[sala].consultar_columnas();
+	return almacen[sala-1].consultar_columnas();
 }
 
 int Almacen::consultar_vacias(int sala) const {
-	return almacen[sala].consultar_vacias();
+	return almacen[sala-1].consultar_vacias();
 }
 
 int Almacen::poner_items(int sala, const string& id, int quantitat, Inventario& inv) {
-    return almacen[sala].poner_items(id, quantitat, inv);
+    return almacen[sala-1].poner_items(id, quantitat, inv);
 }
 
 int Almacen::quitar_items(int sala, const string& id, int quantitat, Inventario& inv) {
-    return almacen[sala].quitar_items(id, quantitat, inv);
+    return almacen[sala-1].quitar_items(id, quantitat, inv);
 }
 
 int Almacen::distribuir(const string& id, int quantitat, Inventario& inv) {
@@ -38,15 +38,15 @@ int Almacen::distribuir(const string& id, int quantitat, Inventario& inv) {
 }
 
 void Almacen::compactar(int sala) {
-    almacen[sala].compactar();
+    almacen[sala-1].compactar();
 }
 
 void Almacen::reorganizar(int sala) {
-    almacen[sala].reorganizar();
+    almacen[sala-1].reorganizar();
 }
 
 void Almacen::redimensionar(int sala, int filas, int columnas) {
-    almacen[sala].redimensionar(filas, columnas);
+    almacen[sala-1].redimensionar(filas, columnas);
 }
 
 void Almacen::leer(int n) {
@@ -59,5 +59,5 @@ void Almacen::leer(int n) {
 }
 
 void Almacen::escribir(int sala) const {
-    almacen[sala].escribir();
+    almacen[sala-1].escribir();
 }

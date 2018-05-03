@@ -18,8 +18,6 @@
 
 ### TO DO:
 
--Cal restar 1 a sala a tots els mètodes de `Almacen` i corregir les precondicions (0 < sala <= n)
-
 -`Almacen::distribuir()`  
 -`Estanteria::compactar()`  
 -`Estanteria::poner_items()`  

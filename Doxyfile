@@ -4,8 +4,8 @@
 # Project related configuration options
 #---------------------------------------------------------------------------
 DOXYFILE_ENCODING      = utf-8
-PROJECT_NAME           = "Laboratorio de PRO2. Ejercicio 'Práctica de PRO2'."
-PROJECT_NUMBER         = "version 4 15-abr-2018"
+PROJECT_NAME           = "Práctica de PRO2."
+PROJECT_NUMBER         = "Mayo de 2018"
 OUTPUT_DIRECTORY       = "./DOC"
 CREATE_SUBDIRS         = NO
 OUTPUT_LANGUAGE        = Spanish
@@ -101,7 +101,7 @@ FILE_PATTERNS          = *.hpp \ *.hh \
 			 program.cpp \ program.cc \
                          principal*.cpp \ principal*.cc
 RECURSIVE              = NO
-EXCLUDE                = *~ \ readbool.hh
+EXCLUDE                = *~
 EXCLUDE_SYMLINKS       = NO
 EXCLUDE_PATTERNS       = *~
 EXCLUDE_SYMBOLS        = 
