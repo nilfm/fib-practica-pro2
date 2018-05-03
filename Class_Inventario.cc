@@ -13,7 +13,7 @@ bool Inventario::esta_dado_de_alta(const string& id) const {
 }
 
 void Inventario::poner_prod(const string& id) {
-    //TO DO
+    inv.insert(pair<string, int>(id, 0));
 }
 
 void Inventario::quitar_prod(const string& id) {
