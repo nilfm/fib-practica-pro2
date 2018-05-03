@@ -25,7 +25,7 @@ using namespace std;
 
 class Inventario{
 private:
-    map<string, int> inv;
+    map<string, int> inventario;
     
 public:
     //Constructores
@@ -79,6 +79,14 @@ public:
       \coste N/A
     */  
     void quitar_prod(const string& id);
+    
+    /** @brief Suma una cantidad de unidades a un producto.
+     * 
+      \pre El producto estaba dado de alta, num es un entero (puede ser negativo).
+      \post Se han sumado num unidades al producto asociado a id.
+      \coste N/A
+    */  
+    void sumar(const string& id, int num);
     
     //Escriure
     /** @brief Escribe los contenidos del inventario, producto-cantidad, en orden de identificador de producto.
