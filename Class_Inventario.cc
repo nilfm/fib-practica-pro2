@@ -17,7 +17,7 @@ void Inventario::poner_prod(const string& id) {
 }
 
 void Inventario::quitar_prod(const string& id) {
-    //TO DO
+    inv.erase(id);
 }
 
 void Inventario::escribir() const {

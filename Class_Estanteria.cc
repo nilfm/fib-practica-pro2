@@ -77,6 +77,7 @@ int Estanteria::poner_items(const string& id, int quantitat, Inventario& inv) {
             vacias--;
         }
     }
+    inv[id] += count;
     return quantitat - count;
 }
 
@@ -91,6 +92,7 @@ int Estanteria::quitar_items(const string& id, int quantitat, Inventario& inv) {
             vacias--;
         }
     }
+    inv[id] -= count;
     return quantitat - count;
 }
 
