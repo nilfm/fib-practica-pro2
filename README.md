@@ -21,9 +21,7 @@
 -`Almacen::distribuir()`  
 -`Estanteria::compactar()`  
 -`Estanteria::escribir()`  
--`Inventario::poner_prod()`
--`Inventario::quitar_prod()`
--`Inventario::escribir()`
+-`comp()` (per ordenar l'estanteria)
 
 ### TO DEBUG:
 

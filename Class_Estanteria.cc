@@ -57,7 +57,7 @@ void Estanteria::compactar() {
 
 void Estanteria::reorganizar() {
     compactar();
-    sort(estanteria.begin(), estanteria.begin() + filas*columnas - vacias); 
+    sort(estanteria.begin(), estanteria.begin() + filas*columnas - vacias, comp); 
 }
 
 void Estanteria::redimensionar(int filas, int columnas) {
