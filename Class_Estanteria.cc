@@ -31,7 +31,7 @@ Estanteria::Estanteria(int filas, int columnas) {
 Estanteria::~Estanteria() {}
 
 string Estanteria::consultar_pos(int fila, int columna) const {
-    return estanteria[fila*columnas + columna];
+    return estanteria[(fila-1)*columnas + columna-1];
 }
 
 int Estanteria::cerca(const string& id) const {
