@@ -67,13 +67,31 @@ void Estanteria::redimensionar(int filas, int columnas) {
 }
 
 int Estanteria::poner_items(const string& id, int quantitat, Inventario& inv) {
-    return 0;
-    //TO DO
+    if (quantitat > 0) ordenat = false;
+    int size = filas*columnas;
+    int count = 0;
+    for (int i = 0; i < size and count < quantitat; i++) {
+        if (estanteria[i] == "NULL") {
+            estanteria[i] = id;
+            count++;
+            vacias--;
+        }
+    }
+    return quantitat - count;
 }
 
 int Estanteria::quitar_items(const string& id, int quantitat, Inventario& inv) {
-    return 0;
-    //TO DO
+    if (quantitat > 0) ordenat = false;
+    int size = filas*columnas;
+    int count = 0;
+    for (int i = 0; i < size and count < quantitat; i++) {
+        if (estanteria[i] == id) {
+            estanteria[i] = "NULL";
+            count++;
+            vacias--;
+        }
+    }
+    return quantitat - count;
 }
 
 void Estanteria::escribir() const{

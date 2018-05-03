@@ -20,10 +20,10 @@
 
 -`Almacen::distribuir()`  
 -`Estanteria::compactar()`  
--`Estanteria::poner_items()`  
--`Estanteria::quitar_items()`  
 -`Estanteria::escribir()`  
--Tota la classe `Inventario`
+-`Inventario::poner_prod()`
+-`Inventario::quitar_prod()`
+-`Inventario::escribir()`
 
 ### TO DEBUG:
 
@@ -31,4 +31,3 @@
 
 ### COMENTARIS:
 
--Cal revisar que els comentaris siguin uniformes en idioma i estil
