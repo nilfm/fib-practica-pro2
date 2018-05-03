@@ -14,7 +14,7 @@
 /** @class Almacen
     @brief Representa un almacén .
     
-    Puede contener salas, que tienen una estantería cada una. Puede usarse para añadir o quitar ítems de salas, o para modificar los parametros de dichas salas.
+    Puede contener salas, que tienen una estantería cada una. Puede usarse para añadir o quitar ítems de salas, o para modificar los parámetros de dichas salas.
 */
 
 class Almacen{
