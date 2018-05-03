@@ -13,15 +13,15 @@ string Almacen::consultar_pos(int sala, int fila, int columna) const {
 }
 
 int Almacen::consultar_filas(int sala) const {
-	return almacen[sala-1].consultar_filas();
+    return almacen[sala-1].consultar_filas();
 }
 
 int Almacen::consultar_columnas(int sala) const {
-	return almacen[sala-1].consultar_columnas();
+    return almacen[sala-1].consultar_columnas();
 }
 
 int Almacen::consultar_vacias(int sala) const {
-	return almacen[sala-1].consultar_vacias();
+    return almacen[sala-1].consultar_vacias();
 }
 
 int Almacen::poner_items(int sala, const string& id, int quantitat, Inventario& inv) {

@@ -40,15 +40,15 @@ int Estanteria::cerca(const string& id) const {
 }
 
 int Estanteria::consultar_filas() const {
-	return filas;
+    return filas;
 }
 
 int Estanteria::consultar_columnas() const {
-	return columnas;
+    return columnas;
 }
 
 int Estanteria::consultar_vacias() const {
-	return vacias;
+    return vacias;
 }
 
 void Estanteria::compactar() {
