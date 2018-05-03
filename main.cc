@@ -100,13 +100,13 @@ int main(){
         else if (opcion == "poner_prod") {
             string id;
             cin >> id;
-            if (not inv.esta_dado_de_alta(id)) cout << ERROR << endl;
+            if (inv.esta_dado_de_alta(id)) cout << ERROR << endl;
             else inv.poner_prod(id);
         }
         else if (opcion == "quitar_prod") {
             string id;
             cin >> id;
-            if (not inv.esta_dado_de_alta(id)) cout << ERROR << endl;
+            if (not inv.esta_dado_de_alta(id) or inv.consultar_prod(id) != 0) cout << ERROR << endl;
             else inv.quitar_prod(id);
         }
         else if (opcion == "inventario") {
