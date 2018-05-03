@@ -21,5 +21,7 @@ void Inventario::quitar_prod(const string& id) {
 }
 
 void Inventario::escribir() const {
-    //TO DO 
+    for (map<string, int>::const_iterator it = inv.begin(); it != inv.end(); it++) {
+        cout << it->first << " " << it-> second << endl;
+    }
 }
