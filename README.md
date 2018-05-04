@@ -19,7 +19,7 @@
 ### TO DO:
 
 -`Almacen::distribuir()`  
--`Estanteria::escribir()` (última part)
+-`Estanteria::escribir()` (última part)  
 
 ### TO DEBUG:
 
@@ -27,7 +27,7 @@
 
 ### COMENTARIS:
 
--Cal canviar el `push_back()` de `Almacen::llegir()`
--Cada sala ha de tenir el seu propi inventari a part (!!!!) per la funció `Estanteria::escribir()`
+-Cal canviar el `push_back()` de `Almacen::llegir()`  
+-Cada sala ha de tenir el seu propi inventari a part (!!!!) per la funció `Estanteria::escribir()`  
 
 
