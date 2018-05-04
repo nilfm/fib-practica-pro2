@@ -52,12 +52,25 @@ int Estanteria::consultar_vacias() const {
 }
 
 void Estanteria::compactar() {
-    //TO DO
+    int size = filas*columnas;
+    int i = 0; //recorre todas las casillas
+    int j = 0; //recorre las casillas llenas
+    //inv: j <= i
+    while (i < size) {
+        if (estanteria[j] == "NULL" and estanteria[i] != "NULL") {
+            estanteria[j] = estanteria[i];
+            estanteria[i] = "NULL";
+            j++;
+        }
+        else if (estanteria[j] != "NULL") j++;
+        i++;
+    }
 }
 
 void Estanteria::reorganizar() {
     compactar();
-    sort(estanteria.begin(), estanteria.begin() + filas*columnas - vacias, comp); 
+    sort(estanteria.begin(), estanteria.begin() + filas*columnas - vacias, Estanteria::comp); 
+    ordenat = true;
 }
 
 void Estanteria::redimensionar(int filas, int columnas) {
@@ -96,7 +109,21 @@ int Estanteria::quitar_items(const string& id, int quantitat, Inventario& inv) {
     return quantitat - count;
 }
 
-void Estanteria::escribir() const{
-    //TO DO
+void Estanteria::escribir() const {
+    int size = filas*columnas;
+    for (int i = size-columnas; i >= 0; i -= columnas){
+        for (int j = 0; j < columnas; j++){
+            if (j != 0) cout << " ";
+            cout << estanteria[i+j];
+        }
+        cout << endl;
+    }
+    cout << size-vacias << endl;
+    //Aquí falta la part on diu quina quantitat hi ha de cada producte
 }
 
+bool Estanteria::comp(const string& s1, const string& s2) {
+    if (s1 == "NULL") return false;
+    if (s2 == "NULL") return true;
+    return s1 < s2;
+}

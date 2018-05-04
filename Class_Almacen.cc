@@ -33,8 +33,8 @@ int Almacen::quitar_items(int sala, const string& id, int quantitat, Inventario&
 }
 
 int Almacen::distribuir(const string& id, int quantitat, Inventario& inv) {
-    return 0;
     //TO DO
+    return 0;
 }
 
 void Almacen::compactar(int sala) {
@@ -54,7 +54,7 @@ void Almacen::leer(int n) {
     for (int i = 0; i < n; i++) {
         int f, c;
         cin >> f >> c;
-        almacen[i] = Estanteria(f, c);
+        almacen.push_back(Estanteria(f, c)); //cal canviar per eliminar el push_back()
     }
 }
 

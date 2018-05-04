@@ -36,7 +36,8 @@ private:
     
     int cerca_dicot(const string& s) const;
     int cerca_lineal(const string& s) const;
-    
+    static bool comp(const string& s1, const string& s2);
+
 public:
     //Constructores
     /** @brief Constructora por tamaño.

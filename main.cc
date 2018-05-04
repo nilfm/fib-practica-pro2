@@ -1,7 +1,7 @@
 #include "Class_Almacen.hh"
 #include "Class_Inventario.hh"
 
-const string ERROR = "Error. Una o más precondiciones no se cumplen.";
+const string ERROR = "error";
 
 int main(){
     int n;
@@ -50,10 +50,7 @@ int main(){
             if (sala <= 0 or sala > n) cout << ERROR << endl;
             else if (not inv.esta_dado_de_alta(id)) cout << ERROR << endl;
             else if (quant < 0) cout << ERROR << endl;
-            else {
-                int sobra = alm.poner_items(sala, id, quant, inv);
-                cout << sobra << endl;
-            }
+            else cout << alm.poner_items(sala, id, quant, inv) << endl;
         }
         else if (opcion == "quitar_items") {
             int sala, quant;
@@ -62,10 +59,7 @@ int main(){
             if (sala <= 0 or sala > n) cout << ERROR << endl;
             else if (not inv.esta_dado_de_alta(id)) cout << ERROR << endl;
             else if (quant < 0) cout << ERROR << endl;
-            else {
-                int sobra = alm.quitar_items(sala, id, quant, inv);
-                cout << sobra << endl;
-            }
+            else cout << alm.quitar_items(sala, id, quant, inv) << endl;
         }
         else if (opcion == "distribuir") {
             string id;
@@ -73,10 +67,7 @@ int main(){
             cin >> id >> quant;
             if (not inv.esta_dado_de_alta(id)) cout << ERROR << endl;
             else if (quant < 0) cout << ERROR << endl;
-            else {
-                int sobra = alm.distribuir(id, quant, inv);
-                cout << sobra << endl;
-            }
+            else cout << alm.distribuir(id, quant, inv) << endl;
         }
         else if (opcion == "consultar_pos") {
             int sala, fila, columna;
@@ -86,16 +77,13 @@ int main(){
             if (sala <= 0 or sala > n) cout << ERROR << endl;
             else if (fila < 0 or columna < 0) cout << ERROR << endl;
             else if (fila > max_filas or columna > max_columnas) cout << ERROR << endl;
-            else alm.consultar_pos(sala, fila, columna);
+            else cout << alm.consultar_pos(sala, fila, columna) << endl;
         }
         else if (opcion == "consultar_prod") {
             string id;
             cin >> id;
             if (not inv.esta_dado_de_alta(id)) cout << ERROR << endl;
-            else {
-                int prod = inv.consultar_prod(id);
-                cout << prod << endl;
-            }
+            else cout << inv.consultar_prod(id) << endl;
         }
         else if (opcion == "poner_prod") {
             string id;

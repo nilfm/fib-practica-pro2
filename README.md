@@ -19,14 +19,15 @@
 ### TO DO:
 
 -`Almacen::distribuir()`  
--`Estanteria::compactar()`  
--`Estanteria::escribir()`  
--`comp()` (per ordenar l'estanteria)  
--Posar `ordenat` a `true` després de fer `sort` 
+-`Estanteria::escribir()` (última part)
 
 ### TO DEBUG:
 
 -De moment tot (però compila!!)
 
 ### COMENTARIS:
+
+-Cal canviar el `push_back()` de `Almacen::llegir()`
+-Cada sala ha de tenir el seu propi inventari a part (!!!!) per la funció `Estanteria::escribir()`
+
 
