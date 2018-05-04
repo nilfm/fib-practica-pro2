@@ -22,6 +22,7 @@
 -`Estanteria::compactar()`  
 -`Estanteria::escribir()`  
 -`comp()` (per ordenar l'estanteria)
+-Posar `ordenat` a `true` després de fer `sort`
 
 ### TO DEBUG:
 
