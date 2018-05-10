@@ -15,8 +15,6 @@ using namespace std;
 
 /** @class BinTree
     @brief Representa un árbol binario.
-    
-    Contiene la cantidad que hay en el almacén de cada uno de sus productos dados de alta.
 */
 
 // A BinTree<T> implements binary trees with values of type T.

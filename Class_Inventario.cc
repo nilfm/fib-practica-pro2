@@ -24,11 +24,9 @@ void Inventario::sumar(const string& id, int num) {
     inventario[id] += num;
 }
 
-//falta poder escriure els inventaris de cada sala - bool com a parametre
-
-void Inventario::escribir() const {
+void Inventario::escribir(bool todas) const {
     for (map<string, int>::const_iterator it = inventario.begin(); it != inventario.end(); it++) {
-        cout << it->first << " " << it-> second << endl;
+        if (vacias or it->second != 0) cout << it->first << " " << it->second << endl;
     }
 }
 

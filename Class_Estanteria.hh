@@ -28,12 +28,12 @@ using namespace std;
 class Estanteria{
 //Invariante de la representación: Si un elemento está en la posición k del vector estanteria, entonces está en la fila (k/columnas) y en la columna (k%columnas).
 private:
-	Inventario sala_inv;
+    Inventario sala_inv;
     vector<string> estanteria;
     int filas;
     int columnas;
     int vacias;
-    //bool compactado para indicar si no hay que volver a hacerlo
+    bool compacto;
     
     static bool comp(const string& s1, const string& s2);
 

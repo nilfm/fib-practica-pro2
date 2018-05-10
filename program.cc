@@ -98,7 +98,7 @@ int main(){
             else inv.quitar_prod(id);
         }
         else if (opcion == "inventario") {
-            inv.escribir();
+            inv.escribir(true);
         }
         else cont = false;
     }

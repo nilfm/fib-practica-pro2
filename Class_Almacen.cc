@@ -4,14 +4,14 @@ Almacen::Almacen() { }
 
 Almacen::~Almacen() { }
 
-int Almacen::i_distribuir(const string id, int quantitat, Inventario& inv, const BinTree<int>& t) {	
-	if (not t.empty()) {
-		int restantes = poner_items(t.value(), id, quantitat, inv);
-		int r1 = i_distribuir(id, restantes - restantes/2, inv, t.left());
-		int r2 = i_distribuir(id, restantes/2, inv, t.right());
-		return r1 + r2;
-	}
-	else return quantitat;
+int Almacen::i_distribuir(const string id, int quantitat, Inventario& inv, const BinTree<int>& t) {    
+    if (not t.empty()) {
+        int restantes = poner_items(t.value(), id, quantitat, inv);
+        int r1 = i_distribuir(id, restantes - restantes/2, inv, t.left());
+        int r2 = i_distribuir(id, restantes/2, inv, t.right());
+        return r1 + r2;
+    }
+    else return quantitat;
 }
 
 void Almacen::leer_bintree(BinTree<int>& a) {
@@ -61,7 +61,7 @@ void Almacen::compactar(int sala) {
 
 void Almacen::reorganizar(int sala) {
     almacen[sala-1].reorganizar();
-	//falla, cal revisar
+    //falla, cal revisar
 }
 
 void Almacen::redimensionar(int sala, int filas, int columnas) {
@@ -69,7 +69,7 @@ void Almacen::redimensionar(int sala, int filas, int columnas) {
 }
 
 void Almacen::leer(int n) {
-	almacen = vector<Estanteria>(n);
+    almacen = vector<Estanteria>(n);
     leer_bintree(tree);
     for (int i = 0; i < n; i++) {
         int f, c;

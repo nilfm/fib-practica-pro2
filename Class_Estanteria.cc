@@ -4,6 +4,7 @@ Estanteria::Estanteria(int filas, int columnas) {
     this->filas = filas;
     this->columnas = columnas;
     vacias = filas*columnas;
+    compacto = true;
     estanteria = vector<string>(filas*columnas, "NULL");
 }
 
@@ -28,6 +29,7 @@ int Estanteria::consultar_vacias() const {
 }
 
 void Estanteria::compactar() {
+    if (compacto) return;
     int size = filas*columnas;
     int i = 0; //recorre todas las casillas
     int j = 0; //recorre las casillas llenas
@@ -41,20 +43,20 @@ void Estanteria::compactar() {
         else if (estanteria[j] != "NULL") j++;
         i++;
     }
+    compacto = true;
 }
 
 void Estanteria::reorganizar() {
-	//recorrer el map i posar-los al vector
-	//cal revisar, no funciona
-    compactar();
-    sort(estanteria.begin(), estanteria.begin() + filas*columnas - vacias, Estanteria::comp); 
+    //recorrer el map i posar-los al vector, cal trobar la manera de recorrer el map privat de l'inventari
+    compacto = true;
 }
 
 void Estanteria::redimensionar(int filas, int columnas) {
-    compactar();
+    if (not compacto) compactar();
     estanteria.resize(filas*columnas, "NULL");
     this->filas = filas;
     this->columnas = columnas;
+    compacto = true;
 }
 
 int Estanteria::poner_items(const string& id, int quantitat, Inventario& inv) {
@@ -84,8 +86,9 @@ int Estanteria::quitar_items(const string& id, int quantitat, Inventario& inv) {
         }
     }
     inv.sumar(id, -count);
-	if (not sala_inv.esta_dado_de_alta(id)) sala_inv.poner_prod(id);
+    if (not sala_inv.esta_dado_de_alta(id)) sala_inv.poner_prod(id);
     sala_inv.sumar(id, -count);
+    compacto = false;
     return quantitat - count;
 }
 
@@ -99,7 +102,7 @@ void Estanteria::escribir() const {
         cout << endl;
     }
     cout << size-vacias << endl;
-	sala_inv.escribir();
+    sala_inv.escribir(false);
 }
 
 bool Estanteria::comp(const string& s1, const string& s2) {

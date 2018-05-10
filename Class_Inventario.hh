@@ -90,12 +90,14 @@ public:
     
     //Escriure
     /** @brief Escribe los contenidos del inventario, producto-cantidad, en orden de identificador de producto.
+     * Tiene una opción para escribir o no escribir los productos de los cuales hay cero unidades.
      * 
       \pre <em>cierto</em>.
-      \post Se ha escrito en el canal de salida la cantidad de cada producto del inventario, ordenados por su identificador.
+      \post Se ha escrito en el canal de salida la cantidad de unidades de cada producto del inventario, ordenados por su identificador.
+      Si "todas" es falso, no se han escrito aquellos productos que tengan cero unidades.
       \coste N/A
     */  
-    void escribir() const;
+    void escribir(bool todas) const;
 
 };
 

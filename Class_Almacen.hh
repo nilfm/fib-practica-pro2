@@ -21,7 +21,6 @@ class Almacen{
 private:
     BinTree<int> tree;
     vector<Estanteria> almacen;
-    //potser falla
     int i_distribuir(const string id, int quantitat, Inventario& inv, const BinTree<int>& t);
     static void leer_bintree(BinTree<int>& a);
     

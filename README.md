@@ -18,14 +18,11 @@
 
 ### TO DO:
 
--`Almacen::distribuir()`  
--`Estanteria::escribir()` (última part)  
 -Canviar tot a referències (sala_iesima)  
--Modificar makefile
+-Modificar makefile  
+-`Estanteria::reorganizar()`
 
 ### TO DEBUG:
-
--`Estanteria::reorganizar()`
 
 ### COMENTARIS:
 
