@@ -17,6 +17,8 @@ using namespace std;
 
 #endif
 
+const string ESPACIOS = "  ";
+
 /** @class Inventario
     @brief Representa un inventario.
     

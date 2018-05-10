@@ -1,0 +1,181 @@
+escribir 1
+  NULL
+  0
+escribir 2
+  NULL NULL
+  NULL NULL
+  0
+escribir 3
+  NULL NULL NULL
+  NULL NULL NULL
+  NULL NULL NULL
+  0
+escribir 4
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  0
+escribir 5
+  NULL NULL NULL
+  NULL NULL NULL
+  NULL NULL NULL
+  NULL NULL NULL
+  0
+escribir 6
+  NULL NULL
+  0
+escribir 7
+  NULL NULL
+  NULL NULL
+  0
+poner_items 5 XW23 100
+   error
+poner_prod XW23
+inventario
+  XW23 0
+poner_prod XW23
+   error
+inventario
+  XW23 0
+quitar_prod QC32
+   error
+quitar_prod XW23
+inventario
+poner_prod XW23
+consultar_prod ZMJ2
+   error
+poner_items 5 XW23 100
+  88
+consultar_pos 5 2 1
+  XW23
+escribir 5
+  XW23 XW23 XW23
+  XW23 XW23 XW23
+  XW23 XW23 XW23
+  XW23 XW23 XW23
+  12
+  XW23 12
+consultar_prod XW23
+  12
+distribuir AS34 40
+   error
+poner_prod AS34
+distribuir AS34 40
+  14
+escribir 1
+  AS34
+  1
+  AS34 1
+escribir 2
+  AS34 AS34
+  AS34 AS34
+  4
+  AS34 4
+escribir 3
+  AS34 AS34 AS34
+  AS34 AS34 AS34
+  AS34 AS34 AS34
+  9
+  AS34 9
+escribir 4
+  AS34 AS34
+  AS34 AS34
+  AS34 AS34
+  6
+  AS34 6
+escribir 5
+  XW23 XW23 XW23
+  XW23 XW23 XW23
+  XW23 XW23 XW23
+  XW23 XW23 XW23
+  12
+  XW23 12
+escribir 6
+  AS34 AS34
+  2
+  AS34 2
+escribir 7
+  AS34 AS34
+  AS34 AS34
+  4
+  AS34 4
+redimensionar 5 3 2
+   error
+escribir 5
+  XW23 XW23 XW23
+  XW23 XW23 XW23
+  XW23 XW23 XW23
+  XW23 XW23 XW23
+  12
+  XW23 12
+redimensionar 5 7 2
+escribir 5
+  NULL NULL
+  XW23 XW23
+  XW23 XW23
+  XW23 XW23
+  XW23 XW23
+  XW23 XW23
+  XW23 XW23
+  12
+  XW23 12
+quitar_items 7 ASDF 10
+   error
+quitar_items 7 XW23 10
+  10
+escribir 7
+  AS34 AS34
+  AS34 AS34
+  4
+  AS34 4
+quitar_items 7 AS34 1
+  0
+escribir 7
+  AS34 AS34
+  NULL AS34
+  3
+  AS34 3
+poner_prod ZZZZ
+poner_items 7 ZZZZ 5
+  4
+escribir 7
+  AS34 AS34
+  ZZZZ AS34
+  4
+  AS34 3
+  ZZZZ 1
+reorganizar 7
+escribir 7
+  AS34 ZZZZ
+  AS34 AS34
+  4
+  AS34 3
+  ZZZZ 1
+quitar_items 5 XW23 4
+  0
+escribir 5
+  NULL NULL
+  XW23 XW23
+  XW23 XW23
+  XW23 XW23
+  XW23 XW23
+  NULL NULL
+  NULL NULL
+  8
+  XW23 8
+compactar 5
+escribir 5
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  XW23 XW23
+  XW23 XW23
+  XW23 XW23
+  XW23 XW23
+  8
+  XW23 8
+inventario
+  AS34 25
+  XW23 8
+  ZZZZ 1
+fin
