@@ -18,14 +18,11 @@
 
 ### TO DO:
 
--Canviar tot a referències (sala_iesima)  
--Modificar makefile  
--`Estanteria::reorganizar()`
+-`Estanteria::reorganizar()` (NOMÉS FALTA AIXÒ)
 
 ### TO DEBUG:
 
 ### COMENTARIS:
 
--Cal canviar el `push_back()` de `Almacen::llegir()`  
 
 

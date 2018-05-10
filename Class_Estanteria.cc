@@ -54,6 +54,7 @@ void Estanteria::reorganizar() {
 void Estanteria::redimensionar(int filas, int columnas) {
     if (not compacto) compactar();
     estanteria.resize(filas*columnas, "NULL");
+    vacias += (filas*columnas - this->filas*this->columnas);
     this->filas = filas;
     this->columnas = columnas;
     compacto = true;
@@ -82,7 +83,7 @@ int Estanteria::quitar_items(const string& id, int quantitat, Inventario& inv) {
         if (estanteria[i] == id) {
             estanteria[i] = "NULL";
             count++;
-            vacias--;
+            vacias++;
         }
     }
     inv.sumar(id, -count);

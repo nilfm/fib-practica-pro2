@@ -26,7 +26,7 @@ void Inventario::sumar(const string& id, int num) {
 
 void Inventario::escribir(bool todas) const {
     for (map<string, int>::const_iterator it = inventario.begin(); it != inventario.end(); it++) {
-        if (vacias or it->second != 0) cout << it->first << " " << it->second << endl;
+        if (todas or it->second != 0) cout << it->first << " " << it->second << endl;
     }
 }
 
