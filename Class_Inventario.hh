@@ -5,6 +5,8 @@
 #ifndef _CLASS_INVENTARIO_
 #define _CLASS_INVENTARIO_
 
+#include "Class_Estanteria.hh"
+
 #ifndef NO_DIAGRAM
 
 #include <iostream>
@@ -24,6 +26,7 @@ using namespace std;
 */
 
 class Inventario{
+    
 private:
     map<string, int> inventario;
     

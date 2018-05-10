@@ -48,6 +48,17 @@ void Estanteria::compactar() {
 
 void Estanteria::reorganizar() {
     //recorrer el map i posar-los al vector, cal trobar la manera de recorrer el map privat de l'inventari
+    //suposem que podem accedir al map directament i ja ho canviarem, sigui m el map
+    int i = 0;
+    for (map<string, int>::const_iterator it = m.begin(); it != m.end(); it++) {
+        estanteria[i] = it->first;
+        i++;
+    }
+    int size = filas*columnas;
+    while (i < size) {
+        estanteria[i] = "NULL";
+        i++;
+    }
     compacto = true;
 }
 
@@ -106,6 +117,7 @@ void Estanteria::escribir() const {
     sala_inv.escribir(false);
 }
 
+//esborrar si puc escriure reorganizar() diferent
 bool Estanteria::comp(const string& s1, const string& s2) {
     if (s1 == "NULL") return false;
     if (s2 == "NULL") return true;

@@ -1,6 +1,6 @@
 #include "Class_Inventario.hh"
 
-Inventario::Inventario() { } //preguntar
+Inventario::Inventario() { }
 
 Inventario::~Inventario() { }
 

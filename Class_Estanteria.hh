@@ -35,6 +35,7 @@ private:
     int vacias;
     bool compacto;
     
+    //esborrar en el futur
     static bool comp(const string& s1, const string& s2);
 
 public:
