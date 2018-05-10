@@ -22,6 +22,9 @@ private:
     BinTree<int> tree;
     vector<Estanteria> almacen;
     
+    int i_distribuir(const string id, int quantitat, Inventario& inv, const BinTree<int>& t);
+    static void leer_bintree(BinTree<int>& a);
+    
 public:
     //Constructores
     /** @brief Constructora por defecto. 
@@ -133,7 +136,7 @@ public:
     */  
     void leer(int n);
     
-    //Escriptura
+    //Escritura
     /** @brief Escribe en el canal de salida el contenido de la sala dada.
      * 
       \pre sala contiene una sala que existe en el almacén.

@@ -14,7 +14,7 @@
 -`Class_Almacen.cc`  
 -`Class_Estanteria.cc`  
 -`Class_Inventario.cc`  
--`main.cc`  
+-`program.cc`  
 
 ### TO DO:
 
@@ -23,11 +23,10 @@
 
 ### TO DEBUG:
 
--De moment tot (però compila!!)
+-`Estanteria::redimensionar()`
 
 ### COMENTARIS:
 
 -Cal canviar el `push_back()` de `Almacen::llegir()`  
--Cada sala ha de tenir el seu propi inventari a part (!!!!) per la funció `Estanteria::escribir()`  
 
 

@@ -1,12 +1,12 @@
-# Doxyfile sesion 8
+# Doxyfile 1.5.6
 
 #---------------------------------------------------------------------------
 # Project related configuration options
 #---------------------------------------------------------------------------
-DOXYFILE_ENCODING      = utf-8
-PROJECT_NAME           = "Práctica de PRO2."
-PROJECT_NUMBER         = "Mayo de 2018"
-OUTPUT_DIRECTORY       = "./DOC"
+DOXYFILE_ENCODING      = UTF-8
+PROJECT_NAME           = "Laboratorio de PRO2. Práctica TreeKEA. "
+PROJECT_NUMBER         = "v7.0 13-11-2017"
+OUTPUT_DIRECTORY       = "."
 CREATE_SUBDIRS         = NO
 OUTPUT_LANGUAGE        = Spanish
 BRIEF_MEMBER_DESC      = YES
@@ -51,7 +51,7 @@ TYPEDEF_HIDES_STRUCT   = NO
 # Build related configuration options
 #---------------------------------------------------------------------------
 EXTRACT_ALL            = YES
-EXTRACT_PRIVATE        = NO
+EXTRACT_PRIVATE        = YES # para que los elementos privados aparezcan en la documentacion
 EXTRACT_STATIC         = NO
 EXTRACT_LOCAL_CLASSES  = YES
 EXTRACT_LOCAL_METHODS  = NO
@@ -94,14 +94,11 @@ WARN_LOGFILE           =
 # configuration options related to the input files
 #---------------------------------------------------------------------------
 INPUT                  = "."
-INPUT_ENCODING         = utf-8
-FILE_PATTERNS          = *.hpp \ *.hh \
-                         main*.cpp \ main*.cc \
-                         pro2*.cpp \ pro2*.cc \
-			 program.cpp \ program.cc \
-                         principal*.cpp \ principal*.cc
+INPUT_ENCODING         = UTF-8
+FILE_PATTERNS          = *.hh \ 
+                         *.cc   # para que todos los ficheros c++ intervengan en la documentacion
 RECURSIVE              = NO
-EXCLUDE                = *~
+EXCLUDE                = *~ \ BinTree.hh \ readbool.hh \ PRO2Excepcio.hh
 EXCLUDE_SYMLINKS       = NO
 EXCLUDE_PATTERNS       = *~
 EXCLUDE_SYMBOLS        = 

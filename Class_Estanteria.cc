@@ -1,5 +1,6 @@
 #include "Class_Estanteria.hh"
 
+//esborrar?
 int Estanteria::cerca_lineal(const string& s) const {
     int size = filas*columnas;
     for (int i = 0; i < size; i++) {
@@ -7,6 +8,7 @@ int Estanteria::cerca_lineal(const string& s) const {
     }
     return -1;
 }
+//esborrar?
 int Estanteria::cerca_dicot(const string& s) const {
     int size = filas*columnas;
     int left = 0;
@@ -34,6 +36,7 @@ string Estanteria::consultar_pos(int fila, int columna) const {
     return estanteria[(fila-1)*columnas + columna-1];
 }
 
+//esborrar?
 int Estanteria::cerca(const string& id) const {
     if (ordenat) return cerca_dicot(id);
     else return cerca_lineal(id);
@@ -68,6 +71,7 @@ void Estanteria::compactar() {
 }
 
 void Estanteria::reorganizar() {
+	//cal revisar, no funciona
     compactar();
     sort(estanteria.begin(), estanteria.begin() + filas*columnas - vacias, Estanteria::comp); 
     ordenat = true;
@@ -75,6 +79,13 @@ void Estanteria::reorganizar() {
 
 void Estanteria::redimensionar(int filas, int columnas) {
     compactar();
+    int dif = filas*columnas - this->filas*this->columnas;
+    if (dif > 0) {
+		for (int i = 0; i < dif; i++) estanteria.push_back("NULL");
+	}
+	else {
+		for (int i = 0; i < -dif; i++) estanteria.pop_back();
+	}
     this->filas = filas;
     this->columnas = columnas;
 }
@@ -91,6 +102,8 @@ int Estanteria::poner_items(const string& id, int quantitat, Inventario& inv) {
         }
     }
     inv.sumar(id, count);
+    if (not sala_inv.esta_dado_de_alta(id)) sala_inv.poner_prod(id);
+    sala_inv.sumar(id, count);
     return quantitat - count;
 }
 
@@ -106,6 +119,8 @@ int Estanteria::quitar_items(const string& id, int quantitat, Inventario& inv) {
         }
     }
     inv.sumar(id, -count);
+	//no hace falta darlo de alta porque tiene que estarlo
+    sala_inv.sumar(id, -count);
     return quantitat - count;
 }
 
@@ -119,7 +134,7 @@ void Estanteria::escribir() const {
         cout << endl;
     }
     cout << size-vacias << endl;
-    //Aquí falta la part on diu quina quantitat hi ha de cada producte
+	sala_inv.escribir();
 }
 
 bool Estanteria::comp(const string& s1, const string& s2) {

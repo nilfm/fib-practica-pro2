@@ -1,6 +1,6 @@
 #include "Class_Inventario.hh"
 
-Inventario::Inventario() { }
+Inventario::Inventario() { } //preguntar
 
 Inventario::~Inventario() { }
 
@@ -14,10 +14,12 @@ bool Inventario::esta_dado_de_alta(const string& id) const {
 
 void Inventario::poner_prod(const string& id) {
     inventario.insert(pair<string, int>(id, 0));
+    //hace falta poner esto en cada sala (?)
 }
 
 void Inventario::quitar_prod(const string& id) {
     inventario.erase(id);
+    //hace falta poner esto en cada sala (?)
 }
 
 void Inventario::sumar(const string& id, int num) {

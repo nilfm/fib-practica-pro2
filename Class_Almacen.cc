@@ -2,11 +2,33 @@
 #include "BinTreeIO.hh"
 
 Almacen::Almacen() {
-    tree = BinTree<int>();
+    tree = BinTree<int>(); //preguntar si cal
     almacen = vector<Estanteria>();
 }
 
-Almacen::~Almacen() {}
+Almacen::~Almacen() { }
+
+int Almacen::i_distribuir(const string id, int quantitat, Inventario& inv, const BinTree<int>& t) {	
+	if (not t.empty()) {
+		int restantes = poner_items(t.value(), id, quantitat, inv);
+		int r1 = i_distribuir(id, restantes - restantes/2, inv, t.left());
+		int r2 = i_distribuir(id, restantes/2, inv, t.right());
+		return r1 + r2;
+	}
+	else return quantitat;
+}
+
+void Almacen::leer_bintree(BinTree<int>& a) {
+    int k;
+    cin >> k;
+    if (k != 0) {
+        BinTree<int> left;
+        BinTree<int> right;
+        leer_bintree(left);
+        leer_bintree(right);
+        a = BinTree<int>(k, left, right);
+    }
+}
 
 string Almacen::consultar_pos(int sala, int fila, int columna) const {
     return almacen[sala-1].consultar_pos(fila, columna);
@@ -33,8 +55,8 @@ int Almacen::quitar_items(int sala, const string& id, int quantitat, Inventario&
 }
 
 int Almacen::distribuir(const string& id, int quantitat, Inventario& inv) {
-    //TO DO
-    return 0;
+    int resto = i_distribuir(id, quantitat, inv, tree);
+    return resto;
 }
 
 void Almacen::compactar(int sala) {
@@ -43,6 +65,7 @@ void Almacen::compactar(int sala) {
 
 void Almacen::reorganizar(int sala) {
     almacen[sala-1].reorganizar();
+	//falla, cal revisar
 }
 
 void Almacen::redimensionar(int sala, int filas, int columnas) {
@@ -50,12 +73,13 @@ void Almacen::redimensionar(int sala, int filas, int columnas) {
 }
 
 void Almacen::leer(int n) {
-    llegir_preordre(tree);
+    leer_bintree(tree);
     for (int i = 0; i < n; i++) {
         int f, c;
         cin >> f >> c;
         almacen.push_back(Estanteria(f, c)); //cal canviar per eliminar el push_back()
     }
+    //pot ser que falli
 }
 
 void Almacen::escribir(int sala) const {
