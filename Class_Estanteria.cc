@@ -79,13 +79,7 @@ void Estanteria::reorganizar() {
 
 void Estanteria::redimensionar(int filas, int columnas) {
     compactar();
-    int dif = filas*columnas - this->filas*this->columnas;
-    if (dif > 0) {
-		for (int i = 0; i < dif; i++) estanteria.push_back("NULL");
-	}
-	else {
-		for (int i = 0; i < -dif; i++) estanteria.pop_back();
-	}
+    estanteria.resize(filas*columnas, "NULL");
     this->filas = filas;
     this->columnas = columnas;
 }
