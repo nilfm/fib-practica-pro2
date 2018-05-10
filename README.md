@@ -23,7 +23,7 @@
 
 ### TO DEBUG:
 
--`Estanteria::redimensionar()`
+-`Estanteria::reorganizar()`
 
 ### COMENTARIS:
 
