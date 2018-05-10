@@ -32,15 +32,16 @@ private:
     vector<string> estanteria;
     int filas;
     int columnas;
-    bool ordenat;
     int vacias;
+    //bool compactado para indicar si no hay que volver a hacerlo
     
-    int cerca_dicot(const string& s) const;
-    int cerca_lineal(const string& s) const;
     static bool comp(const string& s1, const string& s2);
 
 public:
     //Constructores
+    //comentar
+    Estanteria();
+    
     /** @brief Constructora por tamaño.
      * 
       \pre filas y columnas son enteros positivos.
@@ -66,14 +67,6 @@ public:
       \coste N/A
     */   
     string consultar_pos(int fila, int columna) const;
-    
-    /** @brief Busca un ítem en la sala.
-     * 
-      \pre id contiene un identificador de producto.
-      \post Si el producto no está en la sala, devuelve -1. Si está, devuelve un entero con la posición del producto (la fila y la columna se obtienen a través de este número).
-      \coste Logarítmico si la estantería está ordenada, lineal si no lo está.
-    */ 
-    int cerca(const string& id) const;
     
     /** @brief Consulta el número de filas que tiene la estantería.
      * 

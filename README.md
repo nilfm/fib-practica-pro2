@@ -20,6 +20,8 @@
 
 -`Almacen::distribuir()`  
 -`Estanteria::escribir()` (última part)  
+-Canviar tot a referències (sala_iesima)
+-Modificar makefile
 
 ### TO DEBUG:
 

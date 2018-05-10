@@ -21,7 +21,7 @@ class Almacen{
 private:
     BinTree<int> tree;
     vector<Estanteria> almacen;
-    
+    //potser falla
     int i_distribuir(const string id, int quantitat, Inventario& inv, const BinTree<int>& t);
     static void leer_bintree(BinTree<int>& a);
     
@@ -44,6 +44,8 @@ public:
       \coste N/A
     */  
     ~Almacen();
+    
+    //Estanteria& sala_iesima(int sala);
     
     //Consultores
     /** @brief Consulta una posición dada de la estantería de una sala dada.

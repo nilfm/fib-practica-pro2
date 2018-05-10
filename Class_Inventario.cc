@@ -5,7 +5,7 @@ Inventario::Inventario() { } //preguntar
 Inventario::~Inventario() { }
 
 int Inventario::consultar_prod(const string& id) const {
-    return inventario.find(id)->second; //estamos seguros que existe por la precondición
+    return inventario.find(id)->second;
 }
 
 bool Inventario::esta_dado_de_alta(const string& id) const {
@@ -23,6 +23,8 @@ void Inventario::quitar_prod(const string& id) {
 void Inventario::sumar(const string& id, int num) {
     inventario[id] += num;
 }
+
+//falta poder escriure els inventaris de cada sala - bool com a parametre
 
 void Inventario::escribir() const {
     for (map<string, int>::const_iterator it = inventario.begin(); it != inventario.end(); it++) {

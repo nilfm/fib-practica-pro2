@@ -1,10 +1,6 @@
 #include "Class_Almacen.hh"
-#include "BinTreeIO.hh"
 
-Almacen::Almacen() {
-    tree = BinTree<int>(); //preguntar si cal
-    almacen = vector<Estanteria>();
-}
+Almacen::Almacen() { }
 
 Almacen::~Almacen() { }
 
@@ -73,13 +69,13 @@ void Almacen::redimensionar(int sala, int filas, int columnas) {
 }
 
 void Almacen::leer(int n) {
+	almacen = vector<Estanteria>(n);
     leer_bintree(tree);
     for (int i = 0; i < n; i++) {
         int f, c;
         cin >> f >> c;
-        almacen.push_back(Estanteria(f, c)); //cal canviar per eliminar el push_back()
+        almacen[i] = Estanteria(f, c);
     }
-    //pot ser que falli
 }
 
 void Almacen::escribir(int sala) const {
