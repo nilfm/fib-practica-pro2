@@ -5,8 +5,6 @@
 #ifndef _CLASS_INVENTARIO_
 #define _CLASS_INVENTARIO_
 
-#include "Class_Estanteria.hh"
-
 #ifndef NO_DIAGRAM
 
 #include <iostream>

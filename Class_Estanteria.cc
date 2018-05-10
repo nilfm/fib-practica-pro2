@@ -50,6 +50,7 @@ void Estanteria::reorganizar() {
     //recorrer el map i posar-los al vector, cal trobar la manera de recorrer el map privat de l'inventari
     //suposem que podem accedir al map directament i ja ho canviarem, sigui m el map
     int i = 0;
+    map<string, int> m; //PLACEHOLDER, REMOVE!!!
     for (map<string, int>::const_iterator it = m.begin(); it != m.end(); it++) {
         estanteria[i] = it->first;
         i++;

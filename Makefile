@@ -26,4 +26,3 @@ tar: $(CODE) $(HEADERS) Makefile
 clean:
 	rm *.o
 	rm *.exe
-	rm *.tar
