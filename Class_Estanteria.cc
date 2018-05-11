@@ -52,8 +52,11 @@ void Estanteria::reorganizar() {
     int i = 0;
     map<string, int> m; //PLACEHOLDER, REMOVE!!!
     for (map<string, int>::const_iterator it = m.begin(); it != m.end(); it++) {
-        estanteria[i] = it->first;
-        i++;
+        int k = it->second;
+        for (int j = 0; j < k; j++) {
+            estanteria[i] = it->first;
+            i++;
+        }
     }
     int size = filas*columnas;
     while (i < size) {
