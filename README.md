@@ -24,5 +24,6 @@
 
 ### COMENTARIS:
 
+-La funció provisional de `reorganizar()` no està bé (faltaria un for dins del for)
 
 
