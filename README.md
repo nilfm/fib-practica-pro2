@@ -15,10 +15,9 @@
 
 ### TO DO:
 
-+ `Estanteria::reorganizar()` (NOMÉS FALTA AIXÒ)
++ Comentar els fitxers `.cc`
++ Crear un jocs de proves i comentar-lo.
 
 ### TO DEBUG:
 
 ### COMENTARIS:
-
-+ Preguntar si el Makefile està bé (`program.cc` donava errors)
