@@ -61,6 +61,14 @@ public:
     ~Estanteria();
     
     //Consultores
+    /** @brief Consulta cuantas unidades de un producto existen en una estantería.
+     * 
+      \pre <em>cierto</em>.
+      \post Devuelve la cantidad de ese producto que hay en la estantería. Si no estaba dado de alta en la sala, devuelve -1.
+      \coste N/A
+    */   
+    int consultar_cantidad(const string& id) const;
+    
     /** @brief Consulta una posición dada.
      * 
       \pre La posición determinada por fila y columna existe dentro de la estantería.

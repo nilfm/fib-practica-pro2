@@ -12,6 +12,11 @@ Estanteria::Estanteria() { }
 
 Estanteria::~Estanteria() { }
 
+int Estanteria::consultar_cantidad(const string& id) const {
+	if (sala_inv.esta_dado_de_alta(id)) return sala_inv.consultar_prod(id);
+	else return -1;
+}
+
 string Estanteria::consultar_pos(int fila, int columna) const {
     return estanteria[(fila-1)*columnas + columna-1];
 }
