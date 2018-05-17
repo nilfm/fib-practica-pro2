@@ -26,35 +26,51 @@ const string ESPACIOS = "  ";
 */
 
 class Inventario{
-    
 private:
     map<string, int> inventario;
+    map<string, int>::const_iterator itera;
     
 public:
-    //Constructores
+    //Constructoras
     /** @brief Constructora por defecto.
      * 
       \pre <em>cierto</em>
       \post Devuelve un inventario vacío.
-      \coste N/A
+      \coste O(1)
     */  
     Inventario();
     
-    //Destructores
+    //Destructoras
     /** @brief Destructora por defecto.
      * 
       \pre <em>cierto</em>
       \post El inventario queda destruido.
-      \coste N/A
+      \coste O(1)
     */  
     ~Inventario();
     
-    //Consultores
-    /** @brief Consulta la cantidad de unidades que hay en el inventario de un cierto producto.
+    //Consultoras
+   	/** @brief Consulta la posición a la que está apuntando el iterador.
+     * 
+      \pre El iterador está apuntando a una posición del inventario en que hay un producto.
+      \post Devuelve un pair con el identificador del producto al que apunta el iterador y la cantidad de ese producto que hay en el inventario.
+      \coste O(1)
+    */  
+    pair<string, int> consultar_iterador() const;
+    
+    /** @brief Consulta si el iterador está apuntando a una posición en la que hay un producto.
+     * 
+      \pre <em>cierto</em>
+      \post Devuelve cierto si el iterador apunta a una posición que no sea el final del inventario. En particular, si el inventario está vacío devuelve falso.
+      \coste O(1)
+    */  
+    bool iterador_valido() const;
+    
+	/** @brief Consulta la cantidad de unidades que hay en el inventario de un cierto producto.
      * 
       \pre El producto está dado de alta en el inventario.
       \post Devuelve la cantidad de unidades que hay en el inventario del producto con identificador id.
-      \coste N/A
+      \coste O(log n), donde n es la cantidad de productos dados de alta en el inventario.
     */  
     int consultar_prod(const string& id) const;
     
@@ -62,16 +78,32 @@ public:
      * 
       \pre <em>cierto</em>.
       \post Devuelve cierto si el producto está dado de alta, y falso si no.
-      \coste N/A
+      \coste O(log n), donde n es la cantidad de productos dados de alta en el inventario.
     */  
     bool esta_dado_de_alta(const string& id) const;
     
-    //Modificadores
+    //Modificadoras
+    /** @brief Hace que el iterador apunte al principio del inventario.
+     * 
+      \pre <em>cierto</em>
+      \post El iterador queda apuntando al principio del inventario
+      \coste O(1)
+    */  
+    void iterador_al_principio();
+    
+    /** @brief Hace que el iterador se adelante una posición.
+     * 
+      \pre El iterador no está apuntando al final del inventario.
+      \post El iterador queda apuntando a una posición más adelante de la que estaba.
+      \coste O(1)
+    */  
+    void adelantar_iterador();
+    
     /** @brief Da de alta un producto en el inventario.
      * 
       \pre El producto no estaba dado de alta.
       \post El producto queda dado de alta.
-      \coste N/A
+      \coste O(log n), donde n es la cantidad de productos dados de alta en el inventario.
     */  
     void poner_prod(const string& id);
     
@@ -79,7 +111,7 @@ public:
      * 
       \pre El producto estaba dado de alta y había cero unidades de él en el inventario.
       \post El producto queda dado de baja.
-      \coste N/A
+      \coste O(log n), donde n es la cantidad de productos dados de alta en el inventario.
     */  
     void quitar_prod(const string& id);
     
@@ -87,18 +119,18 @@ public:
      * 
       \pre El producto estaba dado de alta, num es un entero (puede ser negativo).
       \post Se han sumado num unidades al producto asociado a id.
-      \coste N/A
+      \coste O(log n), donde n es la cantidad de productos dados de alta en el inventario.
     */  
     void sumar(const string& id, int num);
     
-    //Escriure
+    //Escritura
     /** @brief Escribe los contenidos del inventario, producto-cantidad, en orden de identificador de producto.
      * Tiene una opción para escribir o no escribir los productos de los cuales hay cero unidades.
      * 
       \pre <em>cierto</em>.
       \post Se ha escrito en el canal de salida la cantidad de unidades de cada producto del inventario, ordenados por su identificador.
       Si "todas" es falso, no se han escrito aquellos productos que tengan cero unidades.
-      \coste N/A
+      \coste O(n), donde n es la cantidad de productos dados de alta en el inventario.
     */  
     void escribir(bool todas) const;
 

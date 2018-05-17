@@ -12,13 +12,10 @@ Estanteria::Estanteria() { }
 
 Estanteria::~Estanteria() { }
 
-int Estanteria::consultar_cantidad(const string& id) const {
-	if (sala_inv.esta_dado_de_alta(id)) return sala_inv.consultar_prod(id);
-	else return -1;
-}
-
 string Estanteria::consultar_pos(int fila, int columna) const {
-    return estanteria[(fila-1)*columnas + columna-1];
+	int f_actual = filas - fila;
+	int c_actual = columna - 1;
+    return estanteria[(f_actual)*columnas + c_actual];
 }
 
 int Estanteria::consultar_filas() const {
@@ -52,25 +49,21 @@ void Estanteria::compactar() {
 }
 
 void Estanteria::reorganizar() {
-    //AIXO ES PROVISIONAL, CANVIAR!!
-    /* AQUEST ES EL REAL
-    int i = 0;
-    map<string, int> m; //PLACEHOLDER, REMOVE!!!
-    for (map<string, int>::const_iterator it = m.begin(); it != m.end(); it++) {
-        int k = it->second;
-        for (int j = 0; j < k; j++) {
-            estanteria[i] = it->first;
+	int i = 0;
+	sala_inv.iterador_al_principio();
+    while (sala_inv.iterador_valido()) {
+        pair<string, int> it = sala_inv.consultar_iterador();
+        for (int j = 0; j < it.second; j++) {
+            estanteria[i] = it.first;
             i++;
         }
+        sala_inv.adelantar_iterador();
     }
     int size = filas*columnas;
     while (i < size) {
         estanteria[i] = "NULL";
         i++;
     }
-    compacto   
-    */
-    sort(estanteria.begin(), estanteria.end(), Estanteria::comp);
     compacto = true;
 }
 
@@ -128,11 +121,4 @@ void Estanteria::escribir() const {
     }
     cout << ESPACIOS << size-vacias << endl;
     sala_inv.escribir(false);
-}
-
-//esborrar si puc escriure reorganizar() diferent
-bool Estanteria::comp(const string& s1, const string& s2) {
-    if (s1 == "NULL") return false;
-    if (s2 == "NULL") return true;
-    return s1 < s2;
 }

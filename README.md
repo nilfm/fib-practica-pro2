@@ -21,5 +21,4 @@
 
 ### COMENTARIS:
 
-+ Preguntar si cal comprovar precondició de `Estanteria::quitar_items()` //està fet, només veure si cal fer-ho
 + Preguntar si el Makefile està bé (`program.cc` donava errors)

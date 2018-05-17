@@ -34,46 +34,39 @@ private:
     int columnas;
     int vacias;
     bool compacto;
-    
-    //esborrar en el futur
-    static bool comp(const string& s1, const string& s2);
 
 public:
-    //Constructores
-    //comentar
+    //Constructoras
+    /** @brief Constructora por defecto.
+      \pre <em>cierto</em>.
+      \post Devuelve una estantería vacía.
+    */      
     Estanteria();
     
     /** @brief Constructora por tamaño.
      * 
       \pre filas y columnas son enteros positivos.
       \post Devuelve una estantería inicializada con las dimensiones dadas, donde cada elemento es NULL.
-      \coste N/A
+      \coste O(n), donde n = filas*columnas = número de casillas de la estantería.
     */  
     Estanteria(int filas, int columnas);
     
-    //Destructores
+    //Destructoras
     /** @brief Destructora por defecto.
      * 
       \pre <em>cierto</em>.
       \post La estantería queda destruida.
-      \coste N/A
+      \coste O(1)
     */  
     ~Estanteria();
     
-    //Consultores
-    /** @brief Consulta cuantas unidades de un producto existen en una estantería.
-     * 
-      \pre <em>cierto</em>.
-      \post Devuelve la cantidad de ese producto que hay en la estantería. Si no estaba dado de alta en la sala, devuelve -1.
-      \coste N/A
-    */   
-    int consultar_cantidad(const string& id) const;
-    
+    //Consultoras
     /** @brief Consulta una posición dada.
      * 
       \pre La posición determinada por fila y columna existe dentro de la estantería.
-      \post Devuelve el elemento que se encuentra en la fila y columna dadas. Si no hay nada, devuelve NULL.
-      \coste N/A
+      \post Devuelve el elemento que se encuentra en la fila y columna dadas, donde la posición
+       superior izquierda es (1, 1). Si no hay nada, devuelve NULL.
+      \coste O(1)
     */   
     string consultar_pos(int fila, int columna) const;
     
@@ -81,7 +74,7 @@ public:
      * 
       \pre <em>cierto</em>
       \post Devuelve la cantidad de filas que tiene la estantería.
-      \coste N/A
+      \coste O(1)
     */  
     int consultar_filas() const;
     
@@ -89,7 +82,7 @@ public:
      * 
       \pre <em>cierto</em>
       \post Devuelve la cantidad de columnas que tiene la estantería.
-      \coste N/A
+      \coste O(1)
     */  
     int consultar_columnas() const;
     
@@ -97,16 +90,16 @@ public:
      * 
       \pre <em>cierto</em>
       \post Devuelve la cantidad de posiciones vacías que tiene la estantería.
-      \coste N/A
+      \coste O(1)
     */  
     int consultar_vacias() const;
     
-    //Modificadores
+    //Modificadoras
     /** @brief Compacta la estantería.
      * 
       \pre <em>cierto</em>.
       \post Se ha compactado la estantería siguiendo las instrucciones del enunciado.
-      \coste N/A
+      \coste O(n), donde n es el número de casillas de la estantería.
     */  
     void compactar();
     
@@ -114,7 +107,7 @@ public:
      * 
       \pre <em>cierto</em>.
       \post Se ha compactado y ordenado la estantería.
-      \coste N/A
+      \coste O(n), donde n es el número de casillas de la estantería.
     */  
     void reorganizar();
     
@@ -122,7 +115,7 @@ public:
      * 
       \pre Los productos de la estantería caben en las nuevas medidas.
       \post Se ha compactado y redimensionado la estantería siguiendo las instrucciones del enunciado.
-      \coste N/A
+      \coste O(n), donde n es el número de casillas de la estantería.
     */  
     void redimensionar(int filas, int columnas);
     
@@ -130,7 +123,7 @@ public:
      * 
       \pre id es un producto dado de alta, quantitat es un entero no negativo.
       \post Se han añadido a la sala tantas unidades del producto como sea posible, y se devuelve un entero con la cantidad que ha sobrado.
-      \coste N/A
+      \coste O(n), donde n es el número de casillas de la estantería.
     */  
     int poner_items(const string& id, int quantitat, Inventario& inv);
     
@@ -138,7 +131,7 @@ public:
      * 
       \pre id es un producto dado de alta, quantitat es un entero no negativo.
       \post Se han quitado de la sala tantas unidades del producto como sea posible, y se devuelve un entero con la cantidad que no se ha podido quitar.
-      \coste N/A
+      \coste O(n), donde n es el número de casillas de la estantería.
     */  
     int quitar_items(const string& id, int quantitat, Inventario& inv);
     
@@ -147,7 +140,7 @@ public:
      * 
       \pre <em>cierto</em>.
       \post Se han escrito en el canal de salida los elementos de la estantería, de arriba abajo y de izquierda a derecha.
-      \coste N/A
+      \coste O(n), donde n es el número de casillas de la estantería.
     */  
     void escribir() const;
 };
