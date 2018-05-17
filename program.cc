@@ -64,7 +64,7 @@ int main(){
             cout << opcion << " " << sala << " " << id << " " << quant << endl;
             if (sala <= 0 or sala > n) cout << ERROR << endl;
             else if (not inv.esta_dado_de_alta(id)) cout << ERROR << endl;
-            else if (quant < 0) cout << ERROR << endl;
+            else if (quant < 0) cout << ERROR << endl; //preguntar si cal comprovar tambe la sala
             else cout << ESPACIOS << alm.consultar_sala(sala).quitar_items(id, quant, inv) << endl;
         }
         else if (opcion == "distribuir") {
