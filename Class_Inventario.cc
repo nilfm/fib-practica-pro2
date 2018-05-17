@@ -1,3 +1,7 @@
+/** @file Class_Inventario.cc
+    @brief Implementación de la clase Inventario.
+*/
+
 #include "Class_Inventario.hh"
 
 Inventario::Inventario() { }

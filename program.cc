@@ -1,3 +1,7 @@
+/** @file program.cc
+    @brief Programa principal.
+*/
+
 #include "Class_Almacen.hh"
 #include "Class_Inventario.hh"
 #include "Class_Estanteria.hh"

@@ -1,3 +1,7 @@
+/** @file Class_Estanteria.cc
+    @brief Implementación de la clase Estantería.
+*/
+
 #include "Class_Estanteria.hh"
     
 Estanteria::Estanteria(int filas, int columnas) {

@@ -1,3 +1,7 @@
+/** @file Class_Almacen.cc
+    @brief Implementación de la clase Almacén.
+*/
+
 #include "Class_Almacen.hh"
 
 Almacen::Almacen() { }
