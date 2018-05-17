@@ -15,7 +15,7 @@
 
 ### TO DO:
 
-+ Comentar els fitxers `.cc`
++ All done! 
 
 ### TO DEBUG:
 
