@@ -1,5 +1,5 @@
 /** @file Class_Estanteria.cc
-    @brief Implementación de la clase Estantería.
+    @brief Implementación de la clase Estanteria.
 */
 
 #include "Class_Estanteria.hh"

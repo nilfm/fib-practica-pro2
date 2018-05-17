@@ -1,5 +1,5 @@
 /** @file Class_Almacen.cc
-    @brief Implementación de la clase Almacén.
+    @brief Implementación de la clase Almacen.
 */
 
 #include "Class_Almacen.hh"
