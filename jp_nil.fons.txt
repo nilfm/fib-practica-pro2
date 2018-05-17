@@ -1,0 +1,627 @@
+// -------------------------------- //
+
+ENTRADA COMENTADA:
+
+// Tendremos un árbol binario con muchos hijos a la izquierda y un solo hijo a la derecha (muy desequilibrado)
+9 
+1 2 3 0 0 4 5 0 0 6 7 0 0 8 0 0 9 0 0
+
+// Tendremos estanterías variadas en dimensiones (cuadradas, muy horizontales, muy verticales
+1 4
+2 2
+7 1
+5 2 
+3 3
+9 2
+1 5
+4 3
+1 1
+
+escribir 1
+escribir 2
+escribir 3
+escribir 4
+escribir 5
+escribir 6
+escribir 7
+escribir 8
+escribir 9
+
+// Probamos si funciona redimensionar
+redimensionar 1 5 2
+
+// Probamos si funciona poner_prod
+poner_prod ABCD
+
+// Probamos si se comprueba la precondición de poner_prod
+poner_prod ABCD
+
+// Probamos si funciona inventario
+inventario
+
+// Probamos si funciona quitar_prod
+quitar_prod ABCD
+
+// Probamos si se comprueba la precondición de quitar_prod
+quitar_prod XYZT
+
+poner_prod XYZT
+
+// Probamos si funciona poner_items y si devuelve lo que debe devolver
+poner_items 2 XYZT 7
+
+// Probamos si se comprueba la precondición de poner_items
+poner_items 1 ABCD 3
+
+// Probamos si funciona quitar_items 
+quitar_items 2 XYZT 3
+
+// Probamos si escribir escribe los objetos en el orden apropiado
+escribir 2
+
+// Probamos si funciona consultar_pos y si busca en el sitio apropiado
+consultar_pos 2 1 2
+
+poner_prod ABCD
+
+// Probamos si funciona distribuir, comprobando cómo reparte un número
+// impar de productos entre sus dos salas hijas, y viendo si devuelve lo que corresponde
+distribuir ABCD 17
+
+// Dejamos un hueco en 2 para reorganizarla luego
+quitar_items 2 ABCD 1
+
+// Probamos si funciona reorganizar
+reorganizar 2
+
+poner_prod HJKL
+
+inventario
+
+poner_items 6 HJKL 14
+quitar_items 6 HJKL 2
+
+// Probamos otra vez si escribe las salas dejando los huecos apropiados
+escribir 6
+
+// Probamos si funciona compactar
+compactar 6
+escribir 6
+
+// Probamos si funciona redimensionar
+redimensionar 6 2 12
+escribir 6
+
+// Probamos si se comprueba la precondición de redimensionar
+redimensionar 6 11 1
+
+poner_prod DIST
+
+// Prueba de un caso extremo de distribuir, en la que queda un hueco libre en la 
+// sala 8 y todos los otros huecos quedan llenos
+distribuir DIST 313
+
+// Escribimos todas las salas y acabamos
+escribir 1
+escribir 2
+escribir 3
+escribir 4
+escribir 5
+escribir 6
+escribir 7
+escribir 8
+escribir 9
+
+fin
+
+// -------------------------------- //
+
+ENTRADA SENSE COMENTAR:
+
+9
+1 2 3 0 0 4 5 0 0 6 7 0 0 8 0 0 9 0 0
+1 4
+2 2
+7 1
+5 2 
+3 3
+9 2
+1 5
+4 3
+1 1
+escribir 1
+escribir 2
+escribir 3
+escribir 4
+escribir 5
+escribir 6
+escribir 7
+escribir 8
+escribir 9
+redimensionar 1 5 2
+poner_prod ABCD
+poner_prod ABCD
+inventario
+quitar_prod ABCD
+quitar_prod XYZT
+poner_prod XYZT
+poner_items 2 XYZT 7
+poner_items 1 ABCD 3
+quitar_items 2 XYZT 3
+escribir 2
+consultar_pos 2 1 2
+poner_prod ABCD
+distribuir ABCD 17
+quitar_items 2 ABCD 1
+reorganizar 2
+poner_prod HJKL
+inventario
+poner_items 6 HJKL 14
+quitar_items 6 HJKL 2
+escribir 6
+compactar 6
+escribir 6
+redimensionar 6 2 12
+escribir 6
+redimensionar 6 11 1
+poner_prod DIST
+distribuir DIST 313
+escribir 1
+escribir 2
+escribir 3
+escribir 4
+escribir 5
+escribir 6
+escribir 7
+escribir 8
+escribir 9
+fin
+
+// -------------------------------- //
+
+SORTIDA COMENTADA:
+
+// Se escriben todas las salas vacías, para ver sus dimensiones
+escribir 1
+  NULL NULL NULL NULL
+  0
+escribir 2
+  NULL NULL
+  NULL NULL
+  0
+escribir 3
+  NULL
+  NULL
+  NULL
+  NULL
+  NULL
+  NULL
+  NULL
+  0
+escribir 4
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  0
+escribir 5
+  NULL NULL NULL
+  NULL NULL NULL
+  NULL NULL NULL
+  0
+escribir 6
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  0
+escribir 7
+  NULL NULL NULL NULL NULL
+  0
+escribir 8
+  NULL NULL NULL
+  NULL NULL NULL
+  NULL NULL NULL
+  NULL NULL NULL
+  0
+escribir 9
+  NULL
+  0
+  
+redimensionar 1 5 2
+
+poner_prod ABCD
+
+// Se da un error porque ABCD ya está en el inventario
+poner_prod ABCD
+  error
+  
+// Solamente hay un producto en el inventario, y no hay ninguna unidad de él
+inventario
+  ABCD 0
+
+quitar_prod ABCD
+
+// Se da un error porque XYZT no está en el inventario
+quitar_prod XYZT
+  error
+  
+poner_prod XYZT
+
+// Se ponen 7 elementos en una sala 2x2, hay 3 que no caben
+poner_items 2 XYZT 7
+  3
+ 
+// Se da un error porque ABCD no está inicializado en el inventario
+poner_items 1 ABCD 3
+  error
+  
+// Se quitan 3 unidades XYZT de las 4 que había en la sala 2
+quitar_items 2 XYZT 3
+  0
+  
+// La sala no está compactada porque se acaban de quitar items
+escribir 2
+  NULL XYZT
+  NULL NULL
+  1
+  XYZT 1
+  
+// El elemento de la posición (1, 2) es el de la primera fila (por arriba)
+// y la segunda columna (por la izquierda), en este caso XYZT
+consultar_pos 2 1 2
+  XYZT
+  
+poner_prod ABCD
+
+// Se han puesto diez unidades de ABCD en la sala 1, tres en la sala 2,
+// uno en la sala 3 y uno en la sala 9. Suman 15, sobran 2 de las 17 iniciales
+distribuir ABCD 17
+  2
+  
+// Se quita uno de los 3 items ABCD que había en la sala 2
+quitar_items 2 ABCD 1
+  0
+  
+reorganizar 2
+
+poner_prod HJKL
+
+// En el inventario hay:
+// 14 unidades de ABCD (diez en la sala 1, dos en la sala 2, una en la sala 3 y una en la sala 9)
+// 1 unidad de XYZT (en la sala 2)
+// 0 unidades de HJKL 
+inventario
+  ABCD 14
+  HJKL 0
+  XYZT 1
+  
+// Se han puesto 14 unidades de HJKL en una sala que admite 18
+poner_items 6 HJKL 14
+  0
+  
+// Se han quitado 2 unidades de las que se acaban de poner
+quitar_items 6 HJKL 2
+  0
+  
+// La sala 6 no está compactada porque se acaban de quitar 2 items de ella.
+escribir 6
+  NULL NULL
+  NULL NULL
+  HJKL HJKL
+  HJKL HJKL
+  HJKL HJKL
+  HJKL HJKL
+  HJKL HJKL
+  HJKL HJKL
+  NULL NULL
+  12
+  HJKL 12
+  
+compactar 6
+
+// Se acaba de compactar la sala, mandando las 12 unidades a la parte de abajo
+escribir 6
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  HJKL HJKL
+  HJKL HJKL
+  HJKL HJKL
+  HJKL HJKL
+  HJKL HJKL
+  HJKL HJKL
+  12
+  HJKL 12
+  
+redimensionar 6 2 12
+
+// Se han cambiado las dimensiones de la sala 6, de 9x2 a 2x12. Ahora hay 12 posiciones libres.
+escribir 6
+  NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL
+  HJKL HJKL HJKL HJKL HJKL HJKL HJKL HJKL HJKL HJKL HJKL HJKL
+  12
+  HJKL 12
+  
+// Se da un error porque hay 12 unidades en la sala 6 y se quiere redimensionarlo a 11 casillas
+redimensionar 6 11 1
+  error
+  
+poner_prod DIST
+
+// De las 313 unidades, se colocan:
+// Una en la sala 2
+// Seis en la sala 3
+// Diez en la sala 4
+// Nueve en la sala 5
+// Doce en la sala 6
+// Cinco en la sala 7
+// Once en la sala 8 (queda un hueco)
+// Por lo tanto, sobran 313-54 = 259
+distribuir DIST 313
+  259
+  
+// Se han escrito las salas de nuevo, queda un hueco en la sala 8 y las demás están llenas
+escribir 1
+  ABCD ABCD
+  ABCD ABCD
+  ABCD ABCD
+  ABCD ABCD
+  ABCD ABCD
+  10
+  ABCD 10
+escribir 2
+  XYZT DIST
+  ABCD ABCD
+  4
+  ABCD 2
+  DIST 1
+  XYZT 1
+escribir 3
+  DIST
+  DIST
+  DIST
+  DIST
+  DIST
+  DIST
+  ABCD
+  7
+  ABCD 1
+  DIST 6
+escribir 4
+  DIST DIST
+  DIST DIST
+  DIST DIST
+  DIST DIST
+  DIST DIST
+  10
+  DIST 10
+escribir 5
+  DIST DIST DIST
+  DIST DIST DIST
+  DIST DIST DIST
+  9
+  DIST 9
+escribir 6
+  DIST DIST DIST DIST DIST DIST DIST DIST DIST DIST DIST DIST
+  HJKL HJKL HJKL HJKL HJKL HJKL HJKL HJKL HJKL HJKL HJKL HJKL
+  24
+  DIST 12
+  HJKL 12
+escribir 7
+  DIST DIST DIST DIST DIST
+  5
+  DIST 5
+escribir 8
+  DIST DIST NULL
+  DIST DIST DIST
+  DIST DIST DIST
+  DIST DIST DIST
+  11
+  DIST 11
+escribir 9
+  ABCD
+  1
+  ABCD 1
+  
+fin
+
+// -------------------------------- //
+
+SORTIDA SENSE COMENTAR:
+
+escribir 1
+  NULL NULL NULL NULL
+  0
+escribir 2
+  NULL NULL
+  NULL NULL
+  0
+escribir 3
+  NULL
+  NULL
+  NULL
+  NULL
+  NULL
+  NULL
+  NULL
+  0
+escribir 4
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  0
+escribir 5
+  NULL NULL NULL
+  NULL NULL NULL
+  NULL NULL NULL
+  0
+escribir 6
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  0
+escribir 7
+  NULL NULL NULL NULL NULL
+  0
+escribir 8
+  NULL NULL NULL
+  NULL NULL NULL
+  NULL NULL NULL
+  NULL NULL NULL
+  0
+escribir 9
+  NULL
+  0
+redimensionar 1 5 2
+poner_prod ABCD
+poner_prod ABCD
+  error
+inventario
+  ABCD 0
+quitar_prod ABCD
+quitar_prod XYZT
+  error
+poner_prod XYZT
+poner_items 2 XYZT 7
+  3
+poner_items 1 ABCD 3
+  error
+quitar_items 2 XYZT 3
+  0
+escribir 2
+  NULL XYZT
+  NULL NULL
+  1
+  XYZT 1
+consultar_pos 2 1 2
+  XYZT
+poner_prod ABCD
+distribuir ABCD 17
+  2
+quitar_items 2 ABCD 1
+  0
+reorganizar 2
+poner_prod HJKL
+inventario
+  ABCD 14
+  HJKL 0
+  XYZT 1
+poner_items 6 HJKL 14
+  0
+quitar_items 6 HJKL 2
+  0
+escribir 6
+  NULL NULL
+  NULL NULL
+  HJKL HJKL
+  HJKL HJKL
+  HJKL HJKL
+  HJKL HJKL
+  HJKL HJKL
+  HJKL HJKL
+  NULL NULL
+  12
+  HJKL 12
+compactar 6
+escribir 6
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  HJKL HJKL
+  HJKL HJKL
+  HJKL HJKL
+  HJKL HJKL
+  HJKL HJKL
+  HJKL HJKL
+  12
+  HJKL 12
+redimensionar 6 2 12
+escribir 6
+  NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL
+  HJKL HJKL HJKL HJKL HJKL HJKL HJKL HJKL HJKL HJKL HJKL HJKL
+  12
+  HJKL 12
+redimensionar 6 11 1
+  error
+poner_prod DIST
+distribuir DIST 313
+  259
+escribir 1
+  ABCD ABCD
+  ABCD ABCD
+  ABCD ABCD
+  ABCD ABCD
+  ABCD ABCD
+  10
+  ABCD 10
+escribir 2
+  XYZT DIST
+  ABCD ABCD
+  4
+  ABCD 2
+  DIST 1
+  XYZT 1
+escribir 3
+  DIST
+  DIST
+  DIST
+  DIST
+  DIST
+  DIST
+  ABCD
+  7
+  ABCD 1
+  DIST 6
+escribir 4
+  DIST DIST
+  DIST DIST
+  DIST DIST
+  DIST DIST
+  DIST DIST
+  10
+  DIST 10
+escribir 5
+  DIST DIST DIST
+  DIST DIST DIST
+  DIST DIST DIST
+  9
+  DIST 9
+escribir 6
+  DIST DIST DIST DIST DIST DIST DIST DIST DIST DIST DIST DIST
+  HJKL HJKL HJKL HJKL HJKL HJKL HJKL HJKL HJKL HJKL HJKL HJKL
+  24
+  DIST 12
+  HJKL 12
+escribir 7
+  DIST DIST DIST DIST DIST
+  5
+  DIST 5
+escribir 8
+  DIST DIST NULL
+  DIST DIST DIST
+  DIST DIST DIST
+  DIST DIST DIST
+  11
+  DIST 11
+escribir 9
+  ABCD
+  1
+  ABCD 1
+fin
+
+// -------------------------------- //

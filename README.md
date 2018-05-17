@@ -16,7 +16,6 @@
 ### TO DO:
 
 + Comentar els fitxers `.cc`
-+ Crear un jocs de proves i comentar-lo.
 
 ### TO DEBUG:
 
