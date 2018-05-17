@@ -40,6 +40,7 @@ public:
     /** @brief Constructora por defecto.
       \pre <em>cierto</em>.
       \post Devuelve una estantería vacía.
+      \coste O(1)
     */      
     Estanteria();
     
