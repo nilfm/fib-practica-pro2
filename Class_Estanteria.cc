@@ -42,8 +42,7 @@ void Estanteria::compactar() {
     //inv: j <= i
     while (i < size) {
         if (estanteria[j] == "NULL" and estanteria[i] != "NULL") {
-            estanteria[j] = estanteria[i];
-            estanteria[i] = "NULL";
+            swap(estanteria[i], estanteria[j]);
             j++;
         }
         else if (estanteria[j] != "NULL") j++;
@@ -53,9 +52,9 @@ void Estanteria::compactar() {
 }
 
 void Estanteria::reorganizar() {
-	int i = 0;
-	sala_inv.iterador_al_principio();
-    while (sala_inv.iterador_valido()) {
+    int i = 0;
+    sala_inv.iterador_al_principio(); //inicializamos el iterador
+    while (sala_inv.iterador_valido()) { //iteramos hasta el final del inventario
         pair<string, int> it = sala_inv.consultar_iterador();
         for (int j = 0; j < it.second; j++) {
             estanteria[i] = it.first;
@@ -64,7 +63,7 @@ void Estanteria::reorganizar() {
         sala_inv.adelantar_iterador();
     }
     int size = filas*columnas;
-    while (i < size) {
+    while (i < size) { //el resto van a ser NULL
         estanteria[i] = "NULL";
         i++;
     }
@@ -90,9 +89,9 @@ int Estanteria::poner_items(const string& id, int quantitat, Inventario& inv) {
             vacias--;
         }
     }
-    inv.sumar(id, count);
+    inv.sumar(id, count); //añadimos al inventario general
     if (not sala_inv.esta_dado_de_alta(id)) sala_inv.poner_prod(id);
-    sala_inv.sumar(id, count);
+    sala_inv.sumar(id, count); //añadimos al inventario de la sala
     return quantitat - count;
 }
 
@@ -106,16 +105,16 @@ int Estanteria::quitar_items(const string& id, int quantitat, Inventario& inv) {
             vacias++;
         }
     }
-    inv.sumar(id, -count);
+    inv.sumar(id, -count); //restamos al inventario general
     if (not sala_inv.esta_dado_de_alta(id)) sala_inv.poner_prod(id);
-    sala_inv.sumar(id, -count);
+    sala_inv.sumar(id, -count); //restamos al inventario de la sala
     compacto = false;
     return quantitat - count;
 }
 
 void Estanteria::escribir() const {
     int size = filas*columnas;
-    for (int i = size-columnas; i >= 0; i -= columnas){
+    for (int i = size-columnas; i >= 0; i -= columnas){ //empezamos por arriba y bajamos
         cout << ESPACIOS;
         for (int j = 0; j < columnas; j++){
             if (j != 0) cout << " ";
