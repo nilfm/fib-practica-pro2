@@ -28,8 +28,16 @@ using namespace std;
 class Estanteria{
 //Invariante de la representación: Si un elemento está en la posición k del vector estanteria, entonces está en la fila (k/columnas) y en la columna (k%columnas).
 private:
+    /** @brief Inventario que contiene los productos de la estantería y la cantidad de cada uno.
+     * Se usa para facilitar los métodos escribir() y reorganizar()
+    */ 
     Inventario sala_inv;
+    
+    /** @brief Vector de strings que contiene los identificadores de los productos de la estantería.
+     * Se ha escogido un vector y no una matriz para facilitar los métodos compactar(), redimensionar() y reorganizar()
+    */ 
     vector<string> estanteria;
+    
     int filas;
     int columnas;
     int vacias;

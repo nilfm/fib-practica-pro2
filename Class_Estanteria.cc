@@ -17,8 +17,8 @@ Estanteria::Estanteria() { }
 Estanteria::~Estanteria() { }
 
 string Estanteria::consultar_pos(int fila, int columna) const {
-	int f_actual = filas - fila;
-	int c_actual = columna - 1;
+    int f_actual = filas - fila;
+    int c_actual = columna - 1;
     return estanteria[(f_actual)*columnas + c_actual];
 }
 

@@ -12,8 +12,10 @@ int Almacen::i_distribuir(const string id, int quantitat, Inventario& inv, const
     if (not t.empty()) {
         Estanteria& est = consultar_sala(t.value());
         int restantes = est.poner_items(id, quantitat, inv);
-        int r1 = i_distribuir(id, restantes - restantes/2, inv, t.left());
-        int r2 = i_distribuir(id, restantes/2, inv, t.right());
+        int r1 = i_distribuir(id, restantes - restantes/2, inv, t.left()); //restantes - restantes/2 = parte entera superior de restantes/2
+        int r2 = i_distribuir(id, restantes/2, inv, t.right()); //restantes/2 = parte entera inferior de restantes/2
+        //Hipótesis de inducción: Se han distribuído por los hijos izquierdo y derecho del árbol los productos correspondientes.
+        //r1 y r2 contienen los productos sobrantes en cada hijo del árbol
         return r1 + r2;
     }
     else return quantitat;
@@ -27,6 +29,7 @@ void Almacen::leer_bintree(BinTree<int>& a) {
         BinTree<int> right;
         leer_bintree(left);
         leer_bintree(right);
+        //Hipótesis de inducción: Se han leído los dos hijos izquierdo y derecho de a en left y right
         a = BinTree<int>(k, left, right);
     }
 }

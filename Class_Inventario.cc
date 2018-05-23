@@ -9,11 +9,11 @@ Inventario::Inventario() { }
 Inventario::~Inventario() { }
 
 pair<string, int> Inventario::consultar_iterador() const {
-	return make_pair(itera->first, itera->second); //se puede retornar *itera y ya?
+    return *itera;
 }
 
 bool Inventario::iterador_valido() const {
-	return (itera != inventario.end());
+    return (itera != inventario.end());
 }
 
 int Inventario::consultar_prod(const string& id) const {
@@ -25,11 +25,11 @@ bool Inventario::esta_dado_de_alta(const string& id) const {
 }
 
 void Inventario::iterador_al_principio() {
-	itera = inventario.begin();
+    itera = inventario.begin();
 }
 
 void Inventario::adelantar_iterador() {
-	itera++;
+    itera++;
 }
 
 void Inventario::poner_prod(const string& id) {

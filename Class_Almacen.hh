@@ -20,7 +20,14 @@
 
 class Almacen{
 private:
+    /** @brief Árbol binario que representa la estructura del almacén.
+     * Contiene únicamente los números identificadores de las salas.
+    */ 
     BinTree<int> tree;
+    
+    /** @brief Vector que contiene las estanterías de las salas del almacén.
+     * Se ha escogido un vector para permitir acceso en tiempo constante a una sala sabiendo el número de la sala.
+    */ 
     vector<Estanteria> almacen;
     
     /** @brief Función de inmersión para la función distribuir. 

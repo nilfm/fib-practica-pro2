@@ -27,7 +27,14 @@ const string ESPACIOS = "  ";
 
 class Inventario{
 private:
+    /** @brief Map que contiene la cantidad de cada uno de los productos del inventario
+     * Se ha escogido usar un map por su acceso rápido por keys y por estar ya ordenado
+    */ 
     map<string, int> inventario;
+    
+    /** @brief Contiene un iterador que apunta a algún producto del map, únicamente para
+     * posibilitar la función Estanteria::reorganizar() en tiempo lineal (en vez de n*logn)
+    */ 
     map<string, int>::const_iterator itera;
     
 public:
@@ -50,7 +57,7 @@ public:
     ~Inventario();
     
     //Consultoras
-   	/** @brief Consulta la posición a la que está apuntando el iterador.
+       /** @brief Consulta la posición a la que está apuntando el iterador.
      * 
       \pre El iterador está apuntando a una posición del inventario en que hay un producto.
       \post Devuelve un pair con el identificador del producto al que apunta el iterador y la cantidad de ese producto que hay en el inventario.
@@ -66,7 +73,7 @@ public:
     */  
     bool iterador_valido() const;
     
-	/** @brief Consulta la cantidad de unidades que hay en el inventario de un cierto producto.
+    /** @brief Consulta la cantidad de unidades que hay en el inventario de un cierto producto.
      * 
       \pre El producto está dado de alta en el inventario.
       \post Devuelve la cantidad de unidades que hay en el inventario del producto con identificador id.
