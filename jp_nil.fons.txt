@@ -6,7 +6,7 @@ ENTRADA COMENTADA:
 9 
 1 2 3 0 0 4 5 0 0 6 7 0 0 8 0 0 9 0 0
 
-// Tendremos estanterías variadas en dimensiones (cuadradas, muy horizontales, muy verticales
+// Tendremos estanterías variadas en dimensiones (cuadradas, muy horizontales, muy verticales)
 1 4
 2 2
 7 1
@@ -17,6 +17,7 @@ ENTRADA COMENTADA:
 4 3
 1 1
 
+// Escribimos todas las salas para comprobar que tienen las dimensiones correctas
 escribir 1
 escribir 2
 escribir 3
@@ -27,41 +28,43 @@ escribir 7
 escribir 8
 escribir 9
 
-// Probamos si funciona redimensionar
+// Probamos si funciona redimensionar, cambiando una sala horizontal a una bastante vertical
 redimensionar 1 5 2
 
 // Probamos si funciona poner_prod
 poner_prod ABCD
 
-// Probamos si se comprueba la precondición de poner_prod
+// Probamos si se comprueba la precondición de poner_prod, que dice que el producto no debe estar ya inicializado
 poner_prod ABCD
 
-// Probamos si funciona inventario
+// Probamos si funciona inventario, ahora que hay un producto inicializado
 inventario
 
 // Probamos si funciona quitar_prod
 quitar_prod ABCD
 
-// Probamos si se comprueba la precondición de quitar_prod
+// Probamos si se comprueba la precondición de quitar_prod, que dice que el producto debe estar inicializado
 quitar_prod XYZT
 
+// Volvemos a probar poner_prod
 poner_prod XYZT
 
 // Probamos si funciona poner_items y si devuelve lo que debe devolver
 poner_items 2 XYZT 7
 
-// Probamos si se comprueba la precondición de poner_items
+// Probamos si se comprueba la precondición de poner_items, que dice que el producto debe estar inicializado
 poner_items 1 ABCD 3
 
 // Probamos si funciona quitar_items 
 quitar_items 2 XYZT 3
 
-// Probamos si escribir escribe los objetos en el orden apropiado
+// Probamos si escribir escribe los objetos en el orden apropiado, ya que quedan tres huecos vacíos al principio y un producto al final
 escribir 2
 
-// Probamos si funciona consultar_pos y si busca en el sitio apropiado
+// Probamos si funciona consultar_pos y si busca en el sitio apropiado, empezando desde arriba a la izquierda
 consultar_pos 2 1 2
 
+// Ponemos un producto nuevo para poder distribuirlo
 poner_prod ABCD
 
 // Probamos si funciona distribuir, comprobando cómo reparte un número
@@ -71,13 +74,14 @@ distribuir ABCD 17
 // Dejamos un hueco en 2 para reorganizarla luego
 quitar_items 2 ABCD 1
 
-// Probamos si funciona reorganizar
+// Probamos si funciona reorganizar, en una sala que no estaba ya organizada
 reorganizar 2
 
+// Ponemos un producto nuevo para las siguientes funciones
 poner_prod HJKL
 
+// Probamos varias funciones que ya hemos probado antes, en circunstancias algo diferentes
 inventario
-
 poner_items 6 HJKL 14
 quitar_items 6 HJKL 2
 
@@ -92,16 +96,18 @@ escribir 6
 redimensionar 6 2 12
 escribir 6
 
-// Probamos si se comprueba la precondición de redimensionar
+// Probamos si se comprueba la precondición de redimensionar, que es que los 
+// productos de la sala quepan en las nuevas dimensiones
 redimensionar 6 11 1
 
+// Ponemos un producto nuevo para distribuirlo a continuación
 poner_prod DIST
 
 // Prueba de un caso extremo de distribuir, en la que queda un hueco libre en la 
 // sala 8 y todos los otros huecos quedan llenos
 distribuir DIST 313
 
-// Escribimos todas las salas y acabamos
+// Escribimos todas las salas
 escribir 1
 escribir 2
 escribir 3
@@ -112,6 +118,7 @@ escribir 7
 escribir 8
 escribir 9
 
+// Final de la prueba
 fin
 
 // -------------------------------- //
