@@ -1,3 +1,10 @@
+/** @mainpage
+	Práctica de PRO2 TreeKea, primavera 2018.
+	
+	El programa principal se encuentra en el fichero program.cc. Para cumplir con los
+	requisitos del enunciado, se han diseñado tres clases: Inventario, Estanteria y Almacen.
+ */
+
 /** @file program.cc
     @brief Programa principal.
 */
