@@ -23,7 +23,7 @@ Class_Inventario.o: Class_Inventario.cc Class_Inventario.hh
 practica.tar: $(CODE) $(HEADERS) Makefile Doxyfile html html.zip
 	tar -cvf practica.tar $(CODE) $(HEADERS) Makefile html.zip
 
-html.zip: Doxyfile html
+html.zip: Doxyfile html $(CODE) $(HEADERS)
 	doxygen Doxyfile
 	zip -r html.zip html
 
