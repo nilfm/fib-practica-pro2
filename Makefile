@@ -20,10 +20,10 @@ Class_Estanteria.o: Class_Estanteria.cc Class_Estanteria.hh Class_Inventario.hh
 Class_Inventario.o: Class_Inventario.cc Class_Inventario.hh 
 	$(CC) -c $(OPTIONS) Class_Inventario.cc
 
-practica.tar: $(CODE) $(HEADERS) Makefile Doxyfile html html.zip
+practica.tar: $(CODE) $(HEADERS) Makefile Doxyfile html.zip
 	tar -cvf practica.tar $(CODE) $(HEADERS) Makefile html.zip
 
-html.zip: Doxyfile html $(CODE) $(HEADERS)
+html.zip: Doxyfile $(CODE) $(HEADERS)
 	doxygen Doxyfile
 	zip -r html.zip html
 
