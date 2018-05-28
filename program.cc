@@ -18,8 +18,7 @@ const string ERROR = "  error";
 int main(){
     int n;
     cin >> n;
-    Almacen alm;
-    alm.leer(n);
+    Almacen alm(n);
     Inventario inv;
     
     bool cont = true;

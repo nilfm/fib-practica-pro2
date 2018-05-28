@@ -4,12 +4,20 @@
 
 #include "Class_Almacen.hh"
 
-Almacen::Almacen() { }
+Almacen::Almacen(int n) { 
+    almacen = vector<Estanteria>(n);
+    leer_bintree(tree);
+    for (int i = 0; i < n; i++) {
+        int f, c;
+        cin >> f >> c;
+        almacen[i] = Estanteria(f, c);
+    }
+}
 
 Almacen::~Almacen() { }
 
 int Almacen::i_distribuir(const string id, int quantitat, Inventario& inv, const BinTree<int>& t) {    
-    if (not t.empty()) {
+    if (not t.empty() and quantitat != 0) {
         Estanteria& est = consultar_sala(t.value());
         int restantes = est.poner_items(id, quantitat, inv);
         int r1 = i_distribuir(id, restantes - restantes/2, inv, t.left()); //restantes - restantes/2 = parte entera superior de restantes/2
@@ -41,15 +49,5 @@ Estanteria& Almacen::consultar_sala(int sala) {
 int Almacen::distribuir(const string& id, int quantitat, Inventario& inv) {
     int resto = i_distribuir(id, quantitat, inv, tree);
     return resto;
-}
-
-void Almacen::leer(int n) {
-    almacen = vector<Estanteria>(n);
-    leer_bintree(tree);
-    for (int i = 0; i < n; i++) {
-        int f, c;
-        cin >> f >> c;
-        almacen[i] = Estanteria(f, c);
-    }
 }
 

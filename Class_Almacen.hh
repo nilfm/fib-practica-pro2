@@ -50,14 +50,13 @@ private:
     
 public:
     //Constructoras
-    /** @brief Constructora por defecto. 
+    /** @brief Constructora por tamaño. Lee del canal de entrada los detalles de un almacén y los guarda en el almacén.
      * 
-      Devuelve un almacén sin salas.
-      \pre <em>cierto</em>
-      \post El resultado es un almacén sin ninguna sala.
-      \coste O(1)
+      \pre n es un entero no negativo, el canal de entrada contiene un árbol binario en preorden con nodos no vacíos, y n pares de enteros filas-columnas.
+      \post El almacén que ha sido creado contiene los datos que ha leído del canal de entrada, y está inicializado con las dimensiones de cada estantería.
+      \coste O(m*n), respecto a n salas y m posiciones en la estantería de cada sala (para inicializar las estanterías)
     */  
-    Almacen();
+    Almacen(int n);
     
     //Destructoras
     /** @brief Destructora por defecto.
@@ -87,16 +86,6 @@ public:
       \coste O(m*n), respecto a n salas y m posiciones en la estantería de cada sala
     */  
     int distribuir(const string& id, int quantitat, Inventario& inv);
-    
-    //Lectura
-    /** @brief Lee del canal de entrada los detalles de un almacén y los guarda en el parámetro implícito.
-     * 
-      \pre n es un entero no negativo, el canal de entrada contiene un árbol binario en preorden con nodos no vacíos, y n pares de enteros filas-columnas.
-      \post El parámetro implícito contiene el árbol de estanterías que ha leído del canal de entrada, inicializado con las dimensiones de cada estantería.
-      \coste O(m*n), respecto a n salas y m posiciones en la estantería de cada sala (para inicializar las estanterías)
-    */  
-    void leer(int n);
-
 };
 
 #endif
